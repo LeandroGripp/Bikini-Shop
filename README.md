@@ -41,11 +41,11 @@ O projeto consiste na elaboração de um **SISTEMA WEB de Gestão (ERP)** de uma
    
    
  * **Equipe:**
-   - Daniel Zorzal Lourenço Benicá - [Github](https://github.com/)
-   - Eduarda Queiroz Freire - [Github](https://github.com/LeandroGripp)
-   - Leandro Guatimosim Gripp - [Github](https://github.com/)
-   - Matheus de Miranda Novelli - [Github](https://github.com/)
-   - Pedro Leonardo - [Github](https://github.com/)
+   - Daniel Zorzal Lourenço Benicá - [Github](https://github.com/DanielBenica)
+   - Eduarda Queiroz Freire - [Github](https://github.com/duda1230)
+   - Leandro Guatimosim Gripp - [Github](https://github.com/LeandroGripp)
+   - Matheus de Miranda Novelli - [Github](https://github.com/MatheusNovelli)
+   - Pedro Leonardo - [Github](https://github.com/pedroleo7)
    - Ramon Ferreira Matos - [Github](https://github.com/ramonis567)
 
   
