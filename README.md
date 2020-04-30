@@ -1,7 +1,7 @@
 # Bikini Shop - Projeto Simulado 
 ### TRAINEE CPE
 
-Projeto desenvolvido por estudantes dos cursos das **Engenharias Elétrica e de Controle e Automação** da **Universidade Federal de Minas Gerais (UFMG)**, o projeto é elaborado para o **Projeto Simulado da fase de Trainee do Processo Seletivo da Empresa Juníor CPE Jr.** da universidade. 
+Projeto desenvolvido por estudantes dos cursos das **Engenharias Elétrica, Sistemas e de Controle e Automação** da **Universidade Federal de Minas Gerais (UFMG)**, o projeto é elaborado para o **Projeto Simulado da fase de Trainee do Processo Seletivo da Empresa Juníor CPE Jr.** da universidade. 
 
 O projeto consiste na elaboração de um **SISTEMA WEB de Gestão (ERP)** de uma Loja de Bikinis, um **Bikini Shop**.
 
