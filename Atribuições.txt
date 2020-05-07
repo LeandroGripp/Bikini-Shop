@@ -1,0 +1,5 @@
+Página inicial e navbar - Leandro Gripp/Daniel Benicá/Matheus Novelli
+Login - Eduarda Freire
+Cadastro de funcionário - Ramon Matos
+Cadastro de produto - Leandro Gripp/Daniel Benicá/Matheus Novelli
+Inventário - Leandro Gripp/Daniel Benicá/Matheus Novelli
