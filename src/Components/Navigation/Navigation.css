@@ -1,0 +1,11 @@
+.selected {
+  color: skyblue;
+}
+
+.navigationBar {
+  z-index: 1;
+}
+
+.loginStatus {
+  color: #f0b8f1;
+}

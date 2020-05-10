@@ -1,9 +1,9 @@
 import React from 'react';
 
-export function Estoque (props) {
+export function Home (props) {
   return (
     <div>
-      Estoque
+      Home
     </div>
   )
 }
