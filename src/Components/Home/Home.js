@@ -1,9 +1,9 @@
 import React from 'react';
 
-export function CadastroUsuario (props) {
+export function Home (props) {
   return (
     <div>
-      CadastroUsuario
+      Home
     </div>
   )
 }
