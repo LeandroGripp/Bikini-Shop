@@ -3,7 +3,7 @@ import React from 'react';
 export function CadastroProduto (props) {
   return (
     <div>
-      CadastroProduto
+      Cadastro Produto
     </div>
   )
 }
