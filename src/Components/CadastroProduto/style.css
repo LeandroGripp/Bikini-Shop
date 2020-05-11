@@ -8,8 +8,9 @@
 
 .btn{ 
     border-color: black;
-    margin-top: 250px;
+    margin-top:10px;
     justify-content: center;
+    width: 50%;
 }
 .mbtn:hover{
     color: black;
@@ -17,7 +18,7 @@
 }
 
 .right {
-    position: absolute;
+    position: auto;
     right: 750px;
     width: 300px;
     padding:60px;
@@ -26,7 +27,7 @@
   }
 
 .left {
-    position: absolute;
+    position: auto;
     left: 750px;
     width: 300px;
     padding:60px;
