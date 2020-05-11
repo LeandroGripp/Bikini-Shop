@@ -1,22 +1,36 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import { Home } from './Components/Home/Home';
-import { Login } from './Components/Login/Login';
-import { Estoque } from './Components/Estoque/Estoque';
-import { CadastroProduto } from './Components/CadastroProduto/CadastroProduto';
-import { CadastroUsuario } from './Components/CadastroUsuario/CadastroUsuario';
+import { Home } from "./Components/Home/Home";
+import { Login } from "./Components/Login/Login";
+import { Estoque } from "./Components/Estoque/Estoque";
+import { CadastroProduto } from "./Components/CadastroProduto/CadastroProduto";
+import { CadastroUsuario } from "./Components/CadastroUsuario/CadastroUsuario";
 
-
-export function Routes (props) {
+export function Routes(props) {
+  const addProduto = props.addProduto;
+  const produtos = props.produtos;
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={Home}/>
-        <Route path="/Login" exact component={Login}/>
-        <Route path="/Estoque" exact component={Estoque}/>
-        <Route path="/CadastroProduto" exact component={CadastroProduto}/>
-        <Route path="/CadastroUsuario" exact component={CadastroUsuario}/>
+        <Route path="/" exact render={(props) => <Home />} />
+        <Route path="/Login" exact render={(props) => <Login />} />
+        <Route
+          path="/Estoque"
+          exact
+          render={(props) => <Estoque produtos={produtos} />}
+        />
+        <Route
+          path="/CadastroProduto"
+          exact
+          render={(props) => <CadastroProduto addProduto={addProduto} />}
+        />
+
+        <Route
+          path="/CadastroUsuario"
+          exact
+          render={(props) => <CadastroUsuario />}
+        />
       </Switch>
     </BrowserRouter>
   );
