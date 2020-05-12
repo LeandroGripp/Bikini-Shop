@@ -6,7 +6,7 @@ import "./CadastroProduto.css";
 export function CadastroProduto(props) {
   const [nome, setNome] = useState('');
   const [codigo, setCodigo] = useState('');
-  const [tamanho, setTamanho] = useState('');
+  const [tamanho, setTamanho] = useState('PP');
   const [preco, setPreco] = useState(0);
   const [tipo, setTipo] = useState('');
   const [unidades, setUnidades] = useState(0);
