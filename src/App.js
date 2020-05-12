@@ -5,19 +5,12 @@ import { Routes } from "./Routes";
 import { Navigation } from "./Components/Navigation/Navigation";
 
 function App() {
-  const [produtos, setProdutos] = useState(
-    JSON.parse(sessionStorage.getItem("produtos"))
-  );
-  if(produtos === null) setProdutos([]);
-  function addProduto(produto) {
-    let buffer;
-    if (produtos !== null) buffer = [...produtos];
-    else buffer = [];
-    buffer.push(produto);
-    sessionStorage.setItem("produtos", JSON.stringify(buffer));
-    setProdutos(buffer);
-  }
+  const produtos = (JSON.parse(sessionStorage.getItem("produtos")) || []);
 
+  function addProduto(produto) {
+    produtos.push(produto);
+    sessionStorage.setItem("produtos", JSON.stringify(produtos));
+  }
   return (
     <div className="App">
       <Navigation />

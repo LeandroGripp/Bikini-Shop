@@ -5,7 +5,7 @@ import { Produto } from "../Produto/Produto";
 export function Estoque(props) {
   return (
     <div className="container">
-      <div className="row product-header">
+      <div className="row product-header my-3">
         <div className="col-1">Ref</div>
         <div className="col-5">Name</div>
         <div className="col-2">Type</div>
