@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "./CadastroProduto.css";
+import "./style.css";
 
 
 
