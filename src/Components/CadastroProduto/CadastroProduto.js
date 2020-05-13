@@ -11,6 +11,39 @@ export function CadastroProduto(props) {
   const [tipo, setTipo] = useState('');
   const [unidades, setUnidades] = useState(0);
   
+  function clearSubmit(){
+    setNome('');
+    setCodigo('');
+    setPreco('');
+    setTipo('');
+    setUnidades('');
+  }
+
+  function handleSubmit (){
+    if(nome === ''){
+      alert("Campo NOME não foi preenchido");
+    }
+    else if(codigo === ''){
+      alert("Campo CODIGO não foi preenchido");
+    }
+    else if(preco === '0'){
+      alert("Campo PREÇO não foi preenchido");
+    }
+    else if(tipo === ''){
+      alert("Campo TIPO não foi preenchido");
+    }
+    else if(unidades === ''){
+      alert("Campo UNIDADES não foi preenchido");
+    }
+    
+    else{
+    handleButtonClick();
+    clearSubmit();
+    alert("Produto cadastrado")
+    }
+
+  }
+
   function handleChangeTamanho(event){
     setTamanho(event.target.value); 
   }
@@ -74,7 +107,7 @@ export function CadastroProduto(props) {
         </div>
       </div>
 
-      <button className="mbtn btn" onClick={handleButtonClick}>Enviar</button>
+      <button className="mbtn btn" onClick={handleSubmit}>Enviar</button>
     </div>
   );
 }
