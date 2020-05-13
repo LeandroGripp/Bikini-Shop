@@ -1,59 +1,74 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./CadastroProduto.css";
-
+import Swal from 'sweetalert2'
 
 
 export function CadastroProduto(props) {
-  const [nome, setNome] = useState('');
-  const [codigo, setCodigo] = useState('');
-  const [tamanho, setTamanho] = useState('PP');
+  const [nome, setNome] = useState("");
+  const [codigo, setCodigo] = useState("");
+  const [tamanho, setTamanho] = useState("PP");
   const [preco, setPreco] = useState(0);
-  const [tipo, setTipo] = useState('');
+  const [tipo, setTipo] = useState("");
   const [unidades, setUnidades] = useState(0);
-  
-  function clearSubmit(){
-    setNome('');
-    setCodigo('');
-    setPreco('');
-    setTipo('');
-    setUnidades('');
+
+  function clearSubmit() {
+    setNome("");
+    setCodigo("");
+    setPreco("");
+    setTipo("");
+    setUnidades("");
   }
 
-  function handleSubmit (){
-    if(nome === ''){
-      alert("Campo NOME não foi preenchido");
+  function handleSubmit() {
+    if (nome === "") {
+      Swal.fire(
+        'Erro!!',
+        'Campo NOME não foi preenchido.',
+        'error'
+      );
+    } 
+    else if (codigo === "") {
+      Swal.fire(
+        'Erro!!',
+        'Campo CÓDIGO DE REFERÊNCIA não foi preenchido.',
+        'error'
+      );
+    } 
+    else if (preco === 0) {
+      Swal.fire(
+        'Erro!!',
+        'Campo PREÇO não foi preenchido.',
+        'error'
+      );
+    } 
+     else if (unidades === 0) {
+      Swal.fire(
+        'Erro!!',
+        'Campo UNIDADES não foi preenchido.',
+        'error'
+      );
+    } 
+    else {
+      handleButtonClick();
+      clearSubmit();
+      Swal.fire(
+        'Sucesso!!',
+        'Seu produto foi adicionado ao estoque.',
+        'success'
+      );
     }
-    else if(codigo === ''){
-      alert("Campo CODIGO não foi preenchido");
-    }
-    else if(preco === '0'){
-      alert("Campo PREÇO não foi preenchido");
-    }
-    else if(tipo === ''){
-      alert("Campo TIPO não foi preenchido");
-    }
-    else if(unidades === ''){
-      alert("Campo UNIDADES não foi preenchido");
-    }
-    
-    else{
-    handleButtonClick();
-    clearSubmit();
-    alert("Produto cadastrado")
-    }
-
   }
 
-  function handleChangeTamanho(event){
-    setTamanho(event.target.value); 
+  function handleChangeTamanho(event) {
+    setTamanho(event.target.value);
   }
-  function handleChangePreco(event){
+  function handleChangePreco(event) {
     setPreco(event.target.value);
   }
-  function handleChangeNome(event){
+  function handleChangeNome(event) {
     setNome(event.target.value);
   }
-  function handleChangeCodigo(event){
+  function handleChangeCodigo(event) {
     setCodigo(event.target.value);
   }
   function handleChangeTipo(event) {
@@ -62,19 +77,19 @@ export function CadastroProduto(props) {
   function handleChangeUnidades(event) {
     setUnidades(event.target.value);
   }
-  
+
   function handleButtonClick() {
     let produto = {
-      name: nome,      
+      name: nome,
       ref: codigo,
       size: tamanho,
       price: preco,
       type: tipo,
-      units: unidades
+      units: unidades,
     };
     props.addProduto(produto);
   }
-  
+
   return (
     <div className="h-100 d-flex flex-column align-items-center">
       <h1>Novo Produto</h1>
@@ -90,9 +105,23 @@ export function CadastroProduto(props) {
 
         <div className="d-flex flex-column right">
           <ul>
-            <input className="mx-3 box" type="text" onChange={handleChangeNome} value={nome}></input>
-            <input className="mx-3 box" type="number" onChange={handleChangeCodigo} value={codigo}></input>
-            <select className="mx-3 box" onChange={handleChangeTamanho} value={tamanho}>
+            <input
+              className="mx-3 box"
+              type="text"
+              onChange={handleChangeNome}
+              value={nome}
+            ></input>
+            <input
+              className="mx-3 box"
+              type="number"
+              onChange={handleChangeCodigo}
+              value={codigo}
+            ></input>
+            <select
+              className="mx-3 box"
+              onChange={handleChangeTamanho}
+              value={tamanho}
+            >
               {/* <option selected disabled>Selecione o tamanho</option> */}
               <option>PP</option>
               <option>P</option>
@@ -100,14 +129,31 @@ export function CadastroProduto(props) {
               <option>G</option>
               <option>GG</option>
             </select>
-            <input className="mx-3 box" type="number" onChange={handleChangePreco} value={preco}></input>
-            <input className="mx-3 box" type="text" onChange={handleChangeTipo} value={tipo}></input>
-            <input className="mx-3 box" type="number" onChange={handleChangeUnidades} value={unidades}></input>
+            <input
+              className="mx-3 box"
+              type="number"
+              onChange={handleChangePreco}
+              value={preco}
+            ></input>
+            <input
+              className="mx-3 box"
+              type="text"
+              onChange={handleChangeTipo}
+              value={tipo}
+            ></input>
+            <input
+              className="mx-3 box"
+              type="number"
+              onChange={handleChangeUnidades}
+              value={unidades}
+            ></input>
           </ul>
         </div>
       </div>
 
-      <button className="mbtn btn" onClick={handleSubmit}>Enviar</button>
+      <button className="mbtn btn" onClick={handleSubmit}>
+        Enviar
+      </button>
     </div>
   );
 }
