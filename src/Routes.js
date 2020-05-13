@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Navigation } from "./Components/Navigation/Navigation";
 
 import { Home } from "./Components/Home/Home";
 import { Login } from "./Components/Login/Login";
@@ -12,26 +13,29 @@ export function Routes(props) {
   const produtos = props.produtos;
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/" exact render={(props) => <Home />} />
-        <Route path="/Login" exact render={(props) => <Login />} />
-        <Route
-          path="/Estoque"
-          exact
-          render={(props) => <Estoque produtos={produtos} />}
-        />
-        <Route
-          path="/CadastroProduto"
-          exact
-          render={(props) => <CadastroProduto addProduto={addProduto} />}
-        />
+      <Navigation />
+      <div className="routesContainer">
+        <Switch>
+          <Route path="/" exact render={(props) => <Home />} />
+          <Route path="/Login" exact render={(props) => <Login />} />
+          <Route
+            path="/Estoque"
+            exact
+            render={(props) => <Estoque produtos={produtos} />}
+          />
+          <Route
+            path="/CadastroProduto"
+            exact
+            render={(props) => <CadastroProduto addProduto={addProduto} />}
+          />
 
-        <Route
-          path="/CadastroUsuario"
-          exact
-          render={(props) => <CadastroUsuario />}
-        />
-      </Switch>
+          <Route
+            path="/CadastroUsuario"
+            exact
+            render={(props) => <CadastroUsuario />}
+          />
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 }

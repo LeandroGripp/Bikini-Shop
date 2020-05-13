@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./App.css";
 import { Routes } from "./Routes";
-import { Navigation } from "./Components/Navigation/Navigation";
 
 function App() {
-  const produtos = (JSON.parse(sessionStorage.getItem("produtos")) || []);
+  const produtos = JSON.parse(sessionStorage.getItem("produtos")) || [];
 
   function addProduto(produto) {
     produtos.push(produto);
@@ -13,14 +12,11 @@ function App() {
   }
   return (
     <div className="App">
-      <Navigation />
-      <div className="routesContainer">
-        <Routes
-          className="mainContainer"
-          produtos={produtos}
-          addProduto={addProduto}
-        />
-      </div>
+      <Routes
+        className="mainContainer"
+        produtos={produtos}
+        addProduto={addProduto}
+      />
     </div>
   );
 }
