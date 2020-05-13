@@ -3,7 +3,7 @@ import { Navbar, Nav } from "react-bootstrap";
 import './Navigation.css'
 
 export function Navigation(props) {
-  
+  console.log('nav');
   return (
       <Navbar className="navigationBar" collapseOnSelect expand="md" bg="dark" variant="dark">
         <Navbar.Brand href="/">Bikini shop</Navbar.Brand>

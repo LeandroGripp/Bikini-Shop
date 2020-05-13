@@ -5,9 +5,9 @@
 
 .routesContainer {
   background-color: #AAA;
-  position: absolute;
-  bottom: 0;
-  top: 56px;
+  min-height: 100vh;
+
+  
   display: flex;
   width: 100%;
   justify-content: center;
