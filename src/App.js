@@ -1,26 +1,27 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import "./App.css";
 import { Routes } from "./Routes";
 import { Navigation } from "./Components/Navigation/Navigation";
 
 function App() {
-  const [produtos, setProdutos] = useState([]);
+  const produtos = (JSON.parse(sessionStorage.getItem("produtos")) || []);
+
   function addProduto(produto) {
-    let buffer = [...produtos];
-    buffer.push(produto);
-    setProdutos(buffer);
+    produtos.push(produto);
+    sessionStorage.setItem("produtos", JSON.stringify(produtos));
   }
-
-  console.log(produtos);
-
   return (
-  <div className="App">
-    <Navigation />
-    <div className="routesContainer">
-      <Routes className="mainContainer" produtos={produtos} addProduto={addProduto} />
+    <div className="App">
+      <Navigation />
+      <div className="routesContainer">
+        <Routes
+          className="mainContainer"
+          produtos={produtos}
+          addProduto={addProduto}
+        />
+      </div>
     </div>
-  </div>
   );
 }
 
