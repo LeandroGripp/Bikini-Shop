@@ -3,8 +3,12 @@
   background-color: #f0b8f1;
   width: 100%;
   font-weight: bold;
+  margin-left: 0;
+  margin-right: 0;
+  
 }
 
 .container {
-  width: 700px;
+  max-width: 700px;
+ 
 }

@@ -4,7 +4,7 @@ import "./App.css";
 import { Routes } from "./Routes";
 
 function App() {
-  const produtos = (JSON.parse(sessionStorage.getItem("produtos")) || []);
+  const produtos = JSON.parse(sessionStorage.getItem("produtos")) || [];
 
   function addProduto(produto) {
     produtos.push(produto);
@@ -12,11 +12,11 @@ function App() {
   }
   return (
     <div className="App">
-        <Routes
-          className="mainContainer"
-          produtos={produtos}
-          addProduto={addProduto}
-        />
+      <Routes
+        className="mainContainer"
+        produtos={produtos}
+        addProduto={addProduto}
+      />
     </div>
   );
 }

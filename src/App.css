@@ -4,13 +4,11 @@
 }
 
 .routesContainer {
-  background-color: #AAA;
+  background-color: #aaa;
   min-height: 100vh;
-
-  
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: top;
-  padding: 20px;
+  padding-top: 20px;
 }
