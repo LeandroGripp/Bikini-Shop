@@ -7,7 +7,7 @@ export function CadastroProduto(props) {
   const [codigo, setCodigo] = useState("");
   const [tamanho, setTamanho] = useState("PP");
   const [preco, setPreco] = useState(0);
-  const [tipo, setTipo] = useState("");
+  const [tipo, setTipo] = useState("Bikini");
   const [unidades, setUnidades] = useState(0);
 
   function clearSubmit() {
