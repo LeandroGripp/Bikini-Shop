@@ -11,6 +11,7 @@ export function Navigation(props) {
     CadastroUsuario: extension==="CadastroUsuario",
     CadastroProduto: extension==="CadastroProduto",
   });
+  const[navExpanded, setNavExpanded] = useState(false);
 
   function chooseActive(event) {
     let buffer = {
@@ -23,7 +24,13 @@ export function Navigation(props) {
     const newActive = event.target.href.substring(substIndex);
     buffer[newActive] = true;
     setActive(buffer);
+    setNavExpanded(false);
   }
+
+  function toggleNavbar(){
+    setNavExpanded(!navExpanded);
+  }
+
   return (
     <Navbar
       className="navigationBar"
@@ -31,18 +38,20 @@ export function Navigation(props) {
       expand="md"
       bg="dark"
       variant="dark"
+      expanded={navExpanded}
     >
       <Navbar.Brand href="/">Bikini shop</Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={toggleNavbar}/>
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Link
+          <Nav.Link
+            as={Link}
             to="/Login"
             onClick={chooseActive}
             className={"navlink p-2 " + (active.Login && "active")}
           >
             Login
-          </Link>
+          </Nav.Link>
           <Link
             to="/Estoque"
             onClick={chooseActive}
