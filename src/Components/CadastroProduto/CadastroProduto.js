@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./CadastroProduto.css";
-import Swal from 'sweetalert2'
-
+import Swal from "sweetalert2";
 
 export function CadastroProduto(props) {
   const [nome, setNome] = useState("");
@@ -21,40 +20,24 @@ export function CadastroProduto(props) {
 
   function handleSubmit() {
     if (nome === "") {
+      Swal.fire("Erro!!", "Campo NOME não foi preenchido.", "error");
+    } else if (codigo === "") {
       Swal.fire(
-        'Erro!!',
-        'Campo NOME não foi preenchido.',
-        'error'
+        "Erro!!",
+        "Campo CÓDIGO DE REFERÊNCIA não foi preenchido.",
+        "error"
       );
-    } 
-    else if (codigo === "") {
-      Swal.fire(
-        'Erro!!',
-        'Campo CÓDIGO DE REFERÊNCIA não foi preenchido.',
-        'error'
-      );
-    } 
-    else if (preco === 0) {
-      Swal.fire(
-        'Erro!!',
-        'Campo PREÇO não foi preenchido.',
-        'error'
-      );
-    } 
-     else if (unidades === 0) {
-      Swal.fire(
-        'Erro!!',
-        'Campo UNIDADES não foi preenchido.',
-        'error'
-      );
-    } 
-    else {
+    } else if (preco === 0) {
+      Swal.fire("Erro!!", "Campo PREÇO não foi preenchido.", "error");
+    } else if (unidades === 0) {
+      Swal.fire("Erro!!", "Campo UNIDADES não foi preenchido.", "error");
+    } else {
       handleButtonClick();
       clearSubmit();
       Swal.fire(
-        'Sucesso!!',
-        'Seu produto foi adicionado ao estoque.',
-        'success'
+        "Sucesso!!",
+        "Seu produto foi adicionado ao estoque.",
+        "success"
       );
     }
   }
@@ -135,12 +118,18 @@ export function CadastroProduto(props) {
               onChange={handleChangePreco}
               value={preco}
             ></input>
-            <input
+            <select
               className="mx-3 box"
               type="text"
               onChange={handleChangeTipo}
               value={tipo}
-            ></input>
+            >
+              <option>Biquini</option>
+              <option>Maiô</option>
+              <option>Canga</option>
+              <option>Saia de Praia</option>
+              <option>Promoção</option>
+            </select>
             <input
               className="mx-3 box"
               type="number"
