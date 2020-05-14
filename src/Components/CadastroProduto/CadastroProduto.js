@@ -27,10 +27,10 @@ export function CadastroProduto(props) {
         "error"
       );
     } 
-    else if (preco === 0) {
+    else if (preco === 0 || preco ==='0') {
       Swal.fire("Erro!!", "Campo PREÇO não foi preenchido.", "error");
     }
-     else if (unidades === 0) {
+     else if (unidades === 0 || unidades ==='0') {
       Swal.fire("Erro!!", "Campo UNIDADES não foi preenchido.", "error");
     }
      else {
