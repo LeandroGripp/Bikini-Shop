@@ -13,25 +13,27 @@ export function CadastroProduto(props) {
   function clearSubmit() {
     setNome("");
     setCodigo("");
-    setPreco("");
-    setTipo("");
-    setUnidades("");
+    setPreco(0);
+    setUnidades(0);
   }
 
   function handleSubmit() {
     if (nome === "") {
       Swal.fire("Erro!!", "Campo NOME não foi preenchido.", "error");
-    } else if (codigo === "") {
+    } else if ( codigo === '') {
       Swal.fire(
         "Erro!!",
         "Campo CÓDIGO DE REFERÊNCIA não foi preenchido.",
         "error"
       );
-    } else if (preco === 0) {
+    } 
+    else if (preco === 0) {
       Swal.fire("Erro!!", "Campo PREÇO não foi preenchido.", "error");
-    } else if (unidades === 0) {
+    }
+     else if (unidades === 0) {
       Swal.fire("Erro!!", "Campo UNIDADES não foi preenchido.", "error");
-    } else {
+    }
+     else {
       handleButtonClick();
       clearSubmit();
       Swal.fire(
