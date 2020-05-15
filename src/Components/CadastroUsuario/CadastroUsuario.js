@@ -8,8 +8,8 @@ TO DO:
   - Deixar bonito (SweetAlert/-webkit-linear-gradient no App.css/inclusoes no .css -> BootStrap/MaterialUI)
   - Passar dados para serem usados no form de login (Ver sessionStorage/localStorage -> ver addProdutos())
   - Melhorar validações (Regex no password )
-  -
-   
+  - Resposividade -> Bootstrap
+
 */
 
 export function CadastroUsuario (props) {
