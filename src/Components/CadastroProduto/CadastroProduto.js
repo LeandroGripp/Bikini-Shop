@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./CadastroProduto.css";
 import Swal from "sweetalert2";
+import { Form, Col } from "react-bootstrap";
 
 export function CadastroProduto(props) {
   const [nome, setNome] = useState("");
@@ -20,20 +21,17 @@ export function CadastroProduto(props) {
   function handleSubmit() {
     if (nome === "") {
       Swal.fire("Erro!!", "Campo NOME não foi preenchido.", "error");
-    } else if ( codigo === '') {
+    } else if (codigo === "") {
       Swal.fire(
         "Erro!!",
         "Campo CÓDIGO DE REFERÊNCIA não foi preenchido.",
         "error"
       );
-    } 
-    else if (preco === 0 || preco ==='0') {
+    } else if (preco === 0 || preco === "0") {
       Swal.fire("Erro!!", "Campo PREÇO não foi preenchido.", "error");
-    }
-     else if (unidades === 0 || unidades ==='0') {
+    } else if (unidades === 0 || unidades === "0") {
       Swal.fire("Erro!!", "Campo UNIDADES não foi preenchido.", "error");
-    }
-     else {
+    } else {
       handleButtonClick();
       clearSubmit();
       Swal.fire(
@@ -77,74 +75,96 @@ export function CadastroProduto(props) {
 
   return (
     <div className="h-100 d-flex flex-column align-items-center">
-      <h1>Novo Produto</h1>
-      <div className="d-flex">
-        <div className="d-flex flex-column left">
-          <label className="text">Nome do produto</label>
-          <label className="text">Código de referência</label>
-          <label className="text">Tamanho</label>
-          <label className="text">Preço</label>
-          <label className="text">Tipo de produto</label>
-          <label className="text">Unidades</label>
-        </div>
-
-        <div className="d-flex flex-column right">
-          <ul>
-            <input
-              className="mx-3 box"
-              type="text"
-              onChange={handleChangeNome}
-              value={nome}
-            ></input>
-            <input
-              className="mx-3 box"
-              type="number"
-              onChange={handleChangeCodigo}
-              value={codigo}
-            ></input>
-            <select
-              className="mx-3 box"
-              onChange={handleChangeTamanho}
-              value={tamanho}
-            >
-              {/* <option selected disabled>Selecione o tamanho</option> */}
-              <option>PP</option>
-              <option>P</option>
-              <option>M</option>
-              <option>G</option>
-              <option>GG</option>
-            </select>
-            <input
-              className="mx-3 box"
-              type="number"
-              onChange={handleChangePreco}
-              value={preco}
-            ></input>
-            <select
-              className="mx-3 box"
-              type="text"
-              onChange={handleChangeTipo}
-              value={tipo}
-            >
-              <option>Biquini</option>
-              <option>Maiô</option>
-              <option>Canga</option>
-              <option>Saia de Praia</option>
-              <option>Promoção</option>
-            </select>
-            <input
-              className="mx-3 box"
-              type="number"
-              onChange={handleChangeUnidades}
-              value={unidades}
-            ></input>
-          </ul>
+      <div className="d-flex caixa flex-column">
+        <h1 className="title">Novo Produto</h1>
+        <div className="d-flex flex-column">
+          <Form className="d-flex flex-column">
+            <Form.Group as={Form.Row} controlId="Nome do Produto">
+              <Form.Label column sm={6} className="text">
+                Nome do Produto
+              </Form.Label>
+              <Col sm={6}>
+                <Form.Control
+                  type="text"
+                  onChange={handleChangeNome}
+                  value={nome}
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Form.Row} controlId="Codigo">
+              <Form.Label column sm={6} className="text">
+                Código de referência
+              </Form.Label>
+              <Col sm={6}>
+                <Form.Control
+                  type="number"
+                  onChange={handleChangeCodigo}
+                  value={codigo}
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Form.Row} controlId="Tamanho">
+              <Form.Label column sm={6} className="text">
+                Tamanho
+              </Form.Label>
+              <Col sm={6}>
+                <Form.Control as={"select"}>
+                  <option>PP</option>
+                  <option>P</option>
+                  <option>M</option>
+                  <option>G</option>
+                  <option>GG</option>
+                  onChange={handleChangeTamanho}
+                  value={tamanho}
+                </Form.Control>
+              </Col>
+            </Form.Group>
+            <Form.Group as={Form.Row} controlId="Preco">
+              <Form.Label column sm={6} className="text">
+                Preço
+              </Form.Label>
+              <Col sm={6}>
+                <Form.Control
+                  type="number"
+                  onChange={handleChangePreco}
+                  value={preco}
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Form.Row} controlId="Tipo">
+              <Form.Label column sm={6} className="text">
+                Tipo de Produto
+              </Form.Label>
+              <Col sm={6}>
+                <Form.Control as={"select"}>
+                  <option>Biquini</option>
+                  <option>Maiô</option>
+                  <option>Canga</option>
+                  <option>Saia de Praia</option>
+                  <option>Promoção</option>
+                  onChange={handleChangeTipo}
+                  value={tipo}
+                </Form.Control>
+              </Col>
+            </Form.Group>
+            <Form.Group as={Form.Row} controlId="Unidades">
+              <Form.Label column sm={6} className="text">
+                Unidades
+              </Form.Label>
+              <Col sm={6}>
+                <Form.Control
+                  type="number"
+                  onChange={handleChangeUnidades}
+                  value={unidades}
+                />
+              </Col>
+            </Form.Group>
+          </Form>
+          <button className="mbtn btn mx-auto my-5" onClick={handleSubmit}>
+            Enviar
+          </button>
         </div>
       </div>
-
-      <button className="mbtn btn" onClick={handleSubmit}>
-        Enviar
-      </button>
     </div>
   );
 }
