@@ -13,9 +13,11 @@ export function Estoque(props) {
         <div className="col-2 px-0">Price</div>
         <div className="col-1 px-0">Units</div>
       </div>
-      {(props.produtos.length > 0) ? props.produtos.map((produto, index) => (
-        <Produto key={"prod-" + (index + 1)} produto={produto} />
-      )): "No products"}
+      {props.produtos.length > 0
+        ? props.produtos.map((produto, index) => (
+            <Produto key={"prod-" + (index + 1)} produto={produto} />
+          ))
+        : "No products"}
     </div>
   );
 }

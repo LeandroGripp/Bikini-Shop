@@ -44,14 +44,13 @@ export function Navigation(props) {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={toggleNavbar}/>
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link
-            as={Link}
+          <Link
             to="/Login"
             onClick={chooseActive}
             className={"navlink p-2 " + (active.Login && "active")}
           >
             Login
-          </Nav.Link>
+          </Link>
           <Link
             to="/Estoque"
             onClick={chooseActive}

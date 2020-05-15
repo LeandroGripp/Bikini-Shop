@@ -78,12 +78,12 @@ export function CadastroProduto(props) {
       <div className="d-flex caixa flex-column">
         <h1 className="title">Novo Produto</h1>
         <div className="d-flex flex-column">
-          <Form className= "d-flex flex-column">
+          <Form className="d-flex flex-column">
             <Form.Group as={Form.Row} controlId="Nome do Produto">
-              <Form.Label column sm={5} className="text">
+              <Form.Label column sm={6} className="text">
                 Nome do Produto
               </Form.Label>
-              <Col sm={7}>
+              <Col sm={6}>
                 <Form.Control
                   type="text"
                   onChange={handleChangeNome}
@@ -92,10 +92,10 @@ export function CadastroProduto(props) {
               </Col>
             </Form.Group>
             <Form.Group as={Form.Row} controlId="Codigo">
-              <Form.Label column sm={5} className="text">
+              <Form.Label column sm={6} className="text">
                 Código de referência
               </Form.Label>
-              <Col sm={7}>
+              <Col sm={6}>
                 <Form.Control
                   type="number"
                   onChange={handleChangeCodigo}
@@ -104,10 +104,10 @@ export function CadastroProduto(props) {
               </Col>
             </Form.Group>
             <Form.Group as={Form.Row} controlId="Tamanho">
-              <Form.Label column sm={5} className="text">
+              <Form.Label column sm={6} className="text">
                 Tamanho
               </Form.Label>
-              <Col sm={7}>
+              <Col sm={6}>
                 <Form.Control as={"select"}>
                   <option>PP</option>
                   <option>P</option>
@@ -120,10 +120,10 @@ export function CadastroProduto(props) {
               </Col>
             </Form.Group>
             <Form.Group as={Form.Row} controlId="Preco">
-              <Form.Label column sm={5} className="text">
+              <Form.Label column sm={6} className="text">
                 Preço
               </Form.Label>
-              <Col sm={7}>
+              <Col sm={6}>
                 <Form.Control
                   type="number"
                   onChange={handleChangePreco}
@@ -132,10 +132,10 @@ export function CadastroProduto(props) {
               </Col>
             </Form.Group>
             <Form.Group as={Form.Row} controlId="Tipo">
-              <Form.Label column sm={5} className="text">
+              <Form.Label column sm={6} className="text">
                 Tipo de Produto
               </Form.Label>
-              <Col sm={7}>
+              <Col sm={6}>
                 <Form.Control as={"select"}>
                   <option>Biquini</option>
                   <option>Maiô</option>
@@ -148,10 +148,10 @@ export function CadastroProduto(props) {
               </Col>
             </Form.Group>
             <Form.Group as={Form.Row} controlId="Unidades">
-              <Form.Label column sm={5} className="text">
+              <Form.Label column sm={6} className="text">
                 Unidades
               </Form.Label>
-              <Col sm={7}>
+              <Col sm={6}>
                 <Form.Control
                   type="number"
                   onChange={handleChangeUnidades}
@@ -160,7 +160,7 @@ export function CadastroProduto(props) {
               </Col>
             </Form.Group>
           </Form>
-          <button className="mbtn btn mx-auto" onClick={handleSubmit}>
+          <button className="mbtn btn mx-auto my-5" onClick={handleSubmit}>
             Enviar
           </button>
         </div>

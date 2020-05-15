@@ -1,42 +1,36 @@
-
-.btn{ 
-    border-color: black;
-    margin-top:10px;
-    justify-content: center;
-    width: 50%;
-    position: relative;
-    bottom:-20px;
+.btn {
+  border-color: black;
+  margin-top: 20px;
+  justify-content: center;
+  width: 50%;
 }
-.mbtn:hover{
-    color: white;
-    opacity: 0.8;
-    background-color: black;
+.mbtn:hover {
+  color: white;
+  opacity: 0.8;
+  background-color: black;
 }
 
-.text{
-      font-family: Roboto, sans-serif;
-      align-items: center;
-      justify-content: center;
-      text-align: justify;
+.text {
+  font-family: Roboto, sans-serif;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  font-variant: small-caps;
 }
-.title{
-    font-size: xx-large;
-    font-weight: 700;
-    color: black;
-    text-align: center;
-    position: relative;
-    top: -30px
- }
- 
+.title {
+  font-weight: 700;
+  color: black;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 .caixa {
-    width: 750px;
-    height: 550px;
-    background-color: rgb(228, 228, 228);
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    position: fixed;
-    padding: 65px;
-    border-radius: 6px;
-  }
+  max-width: 750px;
+  background-color: rgb(228, 228, 228);
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 30px 65px;
+  border-radius: 6px;
+}
