@@ -3,6 +3,9 @@
   margin-top: 20px;
   justify-content: center;
   width: 50%;
+  font-family: Montserrat;
+  color: #113618;
+  
 }
 .mbtn:hover {
   color: white;
@@ -26,7 +29,7 @@
 
 .caixa {
   max-width: 750px;
-  background-color: rgb(228, 228, 228);
+  background-color:rgb(196, 191, 191);
   margin: auto;
   justify-content: center;
   align-items: center;

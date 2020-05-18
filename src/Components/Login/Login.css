@@ -1,13 +1,13 @@
 .login {
   width: 570px;
-  height: 690px;
-  background-color: #5FE8B6;
+  height: 650px;
+  background-color: #5fe8b6;
   margin: auto;
   justify-content: center;
   display: flex;
-  position: fixed;
   padding: 65px;
-  border-radius: 4px;
+  border-radius: 10px;
+  opacity: 0.93;
 }
 
 .input {
@@ -23,26 +23,24 @@
   height: 70px;
 }
 
-.checkinput{
-    font-size: medium;
-    font-family: Montserrat;
-    font-weight: 600;
-    opacity: 0.7;
-    position: relative;
-    top: -40px;
-
+.checkinput {
+  font-size: medium;
+  font-family: Montserrat;
+  font-weight: 600;
+  opacity: 0.7;
+  position: relative;
+  top: -40px;
 }
-
 
 .texto {
   font-size: xx-large;
   font-weight: 700;
   color: #343738;
   text-align: center;
-  position: relative;
-  top: -110px;
-  font-family: Montserrat;  
+  margin-bottom: 80px;
+  font-family: Montserrat;
 }
+
 .button {
   background-color: transparent;
   border-color: transparent;
@@ -53,18 +51,17 @@
   font-size: large;
   width: 125px;
   position: relative;
-  bottom: -60px;
-  
+  bottom: -40px;
 }
 
-.mbutton:hover{
-    opacity: 0.8;
-    color: black;
+.mbutton:hover {
+  opacity: 0.9;
+  color: #113618;
 }
 
-.background{
+.background {
   background-image: url(/background1.jpg);
-  max-height: 100vh;   
+  max-height: 100vh;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -72,6 +69,16 @@
   padding-top: 20px;
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
 
+.btn:hover {
+  background-color: #113618;
+  border-color: #113618;
+  font-family: Montserrat;
+}
+
+@media all and (max-width: 570px) {
+  .login {
+    width: 100%;
+  }
+}

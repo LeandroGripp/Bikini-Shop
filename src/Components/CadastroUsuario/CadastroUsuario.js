@@ -64,7 +64,7 @@ export function CadastroUsuario (props) {
 
   return(
       <div className="align-items-center">
-        <form className="">
+        <form className="formback">
         <h2>Cadastro de Usuários</h2> 
           <ul>
           

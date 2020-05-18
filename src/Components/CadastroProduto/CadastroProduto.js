@@ -74,8 +74,7 @@ export function CadastroProduto(props) {
   }
 
   return (
-    <div className="h-100 d-flex flex-column align-items-center">
-      <div className="d-flex caixa flex-column">
+    <div className="h-100 caixa d-flex flex-column align-items-center">
         <h1 className="title">Novo Produto</h1>
         <div className="d-flex flex-column">
           <Form className="d-flex flex-column">
@@ -165,6 +164,6 @@ export function CadastroProduto(props) {
           </button>
         </div>
       </div>
-    </div>
+    
   );
 }

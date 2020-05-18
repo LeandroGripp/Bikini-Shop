@@ -4,7 +4,7 @@
 }
 
 .routesContainer {
-  background-color: #aaaa;
+  background-color: #343738;
   /*background-image: -webkit-linear-gradient(rgba(147, 14, 255, 0.667), #09d1b0);*/
   min-height: 100vh;
   display: flex;
