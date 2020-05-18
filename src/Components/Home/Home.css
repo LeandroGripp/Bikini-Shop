@@ -1,0 +1,53 @@
+.background{
+    background-image: url(/background1.jpg);
+    display :flex;
+}
+
+.logo{
+    width: 400px;
+    height: 350px;
+    margin: 50px;
+    margin-top:30px;
+    border-radius: 4px;
+}
+
+.logar{
+    background-color:#5FE8B6 ;
+    color:#343738;
+    font-size: 28px;
+    padding: 4px;
+    font-weight: 600px;
+    border-radius: 4px;
+    font-family: Montserrat;
+    width:300px;
+    border-color:#5FE8B6;
+    justify-content: center;
+}
+.logar:hover{
+    background-color: rgb(71, 172, 135) ;
+    border-color:rgb(71, 172, 135);
+}
+
+.cadastrar{
+    background-color:#5FCFE8  ;
+    color:#343738;
+    font-size: 28px;
+    padding: 4px;
+    font-weight: 600px;
+    border-radius: 4px;
+    font-family: Montserrat;
+    width:300px;
+    border-color:#5FCFE8 ;
+    justify-content: center;
+    margin-top: 10px;
+
+}
+
+.cadastrar:hover{
+    background-color:rgb(61, 160, 182);
+    border-color:rgb(61, 160, 182) ;
+}
+
+.cadastrar:active,.logar:active{
+    transform: translateY(2px);
+}
