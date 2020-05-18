@@ -1,0 +1,77 @@
+.login {
+  width: 570px;
+  height: 690px;
+  background-color: #5FE8B6;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  position: fixed;
+  padding: 65px;
+  border-radius: 4px;
+}
+
+.input {
+  font-size: large;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-variant: small-caps;
+  opacity: 0.7;
+  border-radius: 3px;
+  background-color: #113618;
+  position: relative;
+  top: -50px;
+  height: 70px;
+}
+
+.checkinput{
+    font-size: medium;
+    font-family: Montserrat;
+    font-weight: 600;
+    opacity: 0.7;
+    position: relative;
+    top: -40px;
+
+}
+
+
+.texto {
+  font-size: xx-large;
+  font-weight: 700;
+  color: #343738;
+  text-align: center;
+  position: relative;
+  top: -110px;
+  font-family: Montserrat;  
+}
+.button {
+  background-color: transparent;
+  border-color: transparent;
+  opacity: 0.4;
+  font-weight: 600;
+  font-family: Montserrat;
+  font-variant: small-caps;
+  font-size: large;
+  width: 125px;
+  position: relative;
+  bottom: -60px;
+  
+}
+
+.mbutton:hover{
+    opacity: 0.8;
+    color: black;
+}
+
+.background{
+  background-image: url(/background1.jpg);
+  max-height: 100vh;   
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: top;
+  padding-top: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
