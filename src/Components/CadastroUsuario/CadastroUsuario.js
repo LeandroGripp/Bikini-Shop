@@ -31,12 +31,13 @@ export function CadastroUsuario (props) {
 
   function handleSubmit(){
     if (uname === ""){
-      Swal.fire("error","Submeta um NOME!");
+      Swal.fire("Submeta um NOME!");
     }else if (email === ""){
-      Swal.fire("Submeta um EMAIL",);
+      Swal.fire("Submeta um EMAIL");
     }else if (password === ""){
       Swal.fire("Submeta uma SENHA");
     }else{
+      buttomSubmit();
       Swal.fire("CADASTRO FEITO COM SUCESSO");
     }
   }
