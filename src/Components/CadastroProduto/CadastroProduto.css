@@ -36,9 +36,13 @@
   display: flex;
   padding: 30px 65px;
   border-radius: 6px;
+  opacity: 0.95;
 }
 .inputProd{
   background-color: rgb(43, 113, 129);
   opacity:0.7;
   color: white;
+}
+.background{
+  background-image:url(/background1.jpg);
 }

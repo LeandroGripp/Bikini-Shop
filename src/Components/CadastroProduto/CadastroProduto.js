@@ -81,6 +81,7 @@ export function CadastroProduto(props) {
   }
 
   return (
+    <div className="background">
     <div className="h-100 caixa d-flex flex-column align-items-center">
       <h1 className="title">Novo Produto</h1>
       <div className="d-flex flex-column">
@@ -185,6 +186,7 @@ export function CadastroProduto(props) {
                 onChange={handleChangeUnidades}
                 value={unidades}
                 className="inputProd"
+                
               />
             </Col>
           </Form.Group>
@@ -193,6 +195,7 @@ export function CadastroProduto(props) {
           Enviar
         </button>
       </div>
+    </div>
     </div>
   );
 }
