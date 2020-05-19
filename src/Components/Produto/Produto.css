@@ -1,6 +1,18 @@
 .product-container {
   background-color: white;
-  width: 100%;
+  width: 90%;
   border-radius: 5px;
   font-weight: normal;
+}
+
+.material-icons {
+  color: white;
+}
+
+.product-btn:hover {
+  cursor: pointer;
+}
+
+input {
+  max-width: 100%;
 }

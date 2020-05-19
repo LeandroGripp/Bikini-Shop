@@ -11,6 +11,8 @@ import { CadastroUsuario } from "./Components/CadastroUsuario/CadastroUsuario";
 export function Routes(props) {
   const addProduto = props.addProduto;
   const produtos = props.produtos;
+  const editProduto = props.editProduto;
+  const removeProduto = props.removeProduto;
   return (
     <BrowserRouter>
       <Navigation />
@@ -21,7 +23,9 @@ export function Routes(props) {
           <Route
             path="/Estoque"
             exact
-            render={(props) => <Estoque produtos={produtos} />}
+            render={(props) => (
+              <Estoque produtos={produtos} editProduto={editProduto} removeProduto={removeProduto} />
+            )}
           />
           <Route
             path="/CadastroProduto"

@@ -42,7 +42,7 @@ export function Login(props) {
             </FormGroup>
           </InputGroup>
           <Link to="/CadastroProduto">
-            <Button variant="outline-success" class="lbutton mx-auto">
+            <Button variant="outline-success" className="lbutton mx-auto">
               Login
             </Button>
           </Link>
