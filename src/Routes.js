@@ -13,6 +13,10 @@ export function Routes(props) {
   const produtos = props.produtos;
   const editProduto = props.editProduto;
   const removeProduto = props.removeProduto;
+
+  const addCadastro = props.addCadastro; 
+  const cadastros = props.cadastros; 
+
   return (
     <BrowserRouter>
       <Navigation />
@@ -33,11 +37,18 @@ export function Routes(props) {
             render={(props) => <CadastroProduto addProduto={addProduto} />}
           />
 
-          <Route
-            path="/CadastroUsuario"
-            exact
-            render={(props) => <CadastroUsuario />}
-          />
+          <Route //
+            path="/CadastroUsuario" //
+            exact //
+            render={(props) => <CadastroUsuario addCadastro={addCadastro} />} //
+          /> //
+
+          <Route //
+            path="/Login" //
+            exact //
+            render={(props) => <CadastroUsuario addCadastro={cadastros} />} //
+          /> //
+
         </Switch>
       </div>
     </BrowserRouter>

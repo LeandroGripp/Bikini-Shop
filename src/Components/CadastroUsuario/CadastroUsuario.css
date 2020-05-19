@@ -1,3 +1,26 @@
 .formback {
-    background-color: white;
+    width: 570px;
+    height: 650px;
+    background-color: #5fe8b6;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    padding: 65px;
+    border-radius: 10px;
+    opacity: 93%;
+}
+
+.titulo {
+    font-family: Montserrat;
+    margin-bottom: 50px;
+    font-weight: 600;
+    color: #343738;
+}
+
+.input {
+    background-color: #113618;
+    border-radius: 5%;
+    border: 1px;
+    margin-top: 10px;
+    font-family: Montserrat;
 }
