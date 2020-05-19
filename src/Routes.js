@@ -12,6 +12,7 @@ export function Routes(props) {
   const addProduto = props.addProduto;
   const produtos = props.produtos;
   const editProduto = props.editProduto;
+  const removeProduto = props.removeProduto;
   return (
     <BrowserRouter>
       <Navigation />
@@ -23,7 +24,7 @@ export function Routes(props) {
             path="/Estoque"
             exact
             render={(props) => (
-              <Estoque produtos={produtos} editProduto={editProduto} />
+              <Estoque produtos={produtos} editProduto={editProduto} removeProduto={removeProduto} />
             )}
           />
           <Route

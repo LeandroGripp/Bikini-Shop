@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Estoque.css";
 import { Produto } from "../Produto/Produto";
 
 export function Estoque(props) {
+  const [stateToUpdate, setStateToUpdate] = useState(true);
+
+  function update() {
+    setStateToUpdate(!stateToUpdate);
+  }
   return (
     <div className="container d-flex flex-column px-0 mx-1">
       <div className="row product-header my-3">
@@ -16,7 +21,7 @@ export function Estoque(props) {
       </div>
       {props.produtos.length > 0
         ? props.produtos.map((produto, index) => (
-            <Produto key={"prod-" + (index + 1)} produto={produto} editProduto={props.editProduto} />
+            <Produto key={"prod-" + (index + 1)} produto={produto} editProduto={props.editProduto} removeProduto={props.removeProduto} update={update} stateToUpdate={stateToUpdate}/>
           ))
         : "No products"}
     </div>

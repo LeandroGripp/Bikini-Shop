@@ -1,15 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Produto.css";
 
 export function Produto(props) {
   const [editing, setEditing] = useState(false);
-  const codigo = props.produto.ref;
+  const codigo = (props.produto.ref);
   const [nome, setNome] = useState(props.produto.name);
   const [descricao, setDescricao] = useState(props.produto.description);
-  const tamanho = props.produto.size;
+  const tamanho = (props.produto.size);
   const [preco, setPreco] = useState(props.produto.price);
   const [tipo, setTipo] = useState(props.produto.type);
   const [unidades, setUnidades] = useState(props.produto.units);
+
+
+  //LÓGICA DE INICIALIZAÇÃO PARA ATUALIZAR OS STATES EM CASO DE EXCLUSÃO DE UM ELEMENTO
+  useEffect(() => {
+    setNome(props.produto.name);
+    return; 
+  },[props.produto.name]);
+  useEffect(() => {
+    setDescricao(props.produto.description);
+    return; 
+  },[props.produto.description]);
+  useEffect(() => {
+    setPreco(props.produto.price);
+    return; 
+  },[props.produto.price]);
+  useEffect(() => {
+    setTipo(props.produto.type);
+    return; 
+  },[props.produto.type]);
+  useEffect(() => {
+    setUnidades(props.produto.units);
+    return; 
+  },[props.produto.units]);
+  //FIM DA LÓGICA DE INICIALIZAÇÃO PARA ATUALIZAR OS STATES EM CASO DE EXCLUSÃO DE UM ELEMENTO
 
   function handleChangePreco(event) {
     setPreco(event.target.value);
@@ -30,6 +54,19 @@ export function Produto(props) {
   function handleEditClick() {
     setEditing(true);
   }
+  function handleDeleteClick() {
+    const produtoARemover = {
+      name: nome,
+      description: descricao,
+      ref: codigo,
+      size: tamanho,
+      price: preco,
+      type: tipo,
+      units: unidades
+    };
+    props.removeProduto(produtoARemover);
+    props.update();
+  }
   function handleSaveClick() {
     const produtoAEditar = {
       name: nome,
@@ -38,7 +75,7 @@ export function Produto(props) {
       size: tamanho,
       price: preco,
       type: tipo,
-      units: unidades,
+      units: unidades
     };
     props.editProduto(produtoAEditar);
     setEditing(false);
@@ -104,7 +141,7 @@ export function Produto(props) {
         <span className="product-btn material-icons" onClick={handleEditClick}>
           edit
         </span>
-        <span className="product-btn material-icons">delete</span>
+        <span className="product-btn material-icons" onClick={handleDeleteClick}>delete</span>
       </div>
     );
   }

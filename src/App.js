@@ -10,15 +10,23 @@ function App() {
     localStorage.setItem("produtos", JSON.stringify(produtos));
   }
   function editProduto(produto) {
-    console.log(produto);
     let indexToEdit;
     produtos.forEach((item, index) => {
       if(item.ref === produto.ref && item.size === produto.size) {
         indexToEdit = index;
       }
     });
-    console.log(indexToEdit);
     produtos[indexToEdit] = produto;
+    localStorage.setItem("produtos", JSON.stringify(produtos));
+  }
+  function removeProduto(produto) {
+    let indexToEdit;
+    produtos.forEach((item, index) => {
+      if(item.ref === produto.ref && item.size === produto.size) {
+        indexToEdit = index;
+      }
+    });
+    produtos.splice(indexToEdit, 1);
     localStorage.setItem("produtos", JSON.stringify(produtos));
   }
   return (
@@ -28,6 +36,7 @@ function App() {
         produtos={produtos}
         addProduto={addProduto}
         editProduto={editProduto}
+        removeProduto={removeProduto}
       />
     </div>
   );
