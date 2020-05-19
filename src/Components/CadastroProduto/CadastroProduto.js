@@ -22,7 +22,7 @@ export function CadastroProduto(props) {
   function handleSubmit() {
     if (nome === "") {
       Swal.fire("Erro!!", "Campo NOME não foi preenchido.", "error");
-    } else if(descricao ==="") {
+    } else if (descricao === "") {
       Swal.fire("Erro!!", "Campo DESCRIÇÃO não foi preenchido.", "error");
     } else if (codigo === "") {
       Swal.fire(
@@ -77,6 +77,7 @@ export function CadastroProduto(props) {
       type: tipo,
       units: unidades,
     };
+    console.log(produto);
     props.addProduto(produto);
   }
 
@@ -126,14 +127,16 @@ export function CadastroProduto(props) {
               Tamanho
             </Form.Label>
             <Col sm={6}>
-              <Form.Control as={"select"}>
+              <Form.Control
+                as={"select"}
+                onChange={handleChangeTamanho}
+                value={tamanho}
+              >
                 <option>PP</option>
                 <option>P</option>
                 <option>M</option>
                 <option>G</option>
                 <option>GG</option>
-                onChange={handleChangeTamanho}
-                value={tamanho}
               </Form.Control>
             </Col>
           </Form.Group>
@@ -154,14 +157,16 @@ export function CadastroProduto(props) {
               Tipo de Produto
             </Form.Label>
             <Col sm={6}>
-              <Form.Control as={"select"}>
+              <Form.Control
+                as={"select"}
+                onChange={handleChangeTipo}
+                value={tipo}
+              >
                 <option>Biquini</option>
                 <option>Maiô</option>
                 <option>Canga</option>
                 <option>Saia de Praia</option>
                 <option>Promoção</option>
-                onChange={handleChangeTipo}
-                value={tipo}
               </Form.Control>
             </Col>
           </Form.Group>

@@ -8,3 +8,11 @@
 .material-icons {
   color: white;
 }
+
+.product-btn:hover {
+  cursor: pointer;
+}
+
+input {
+  max-width: 100%;
+}
