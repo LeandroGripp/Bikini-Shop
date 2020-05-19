@@ -11,6 +11,10 @@ import { CadastroUsuario } from "./Components/CadastroUsuario/CadastroUsuario";
 export function Routes(props) {
   const addProduto = props.addProduto;
   const produtos = props.produtos;
+
+  const addCadastro = props.addCadastro; //
+  const cadastros = props.cadastros; //
+
   return (
     <BrowserRouter>
       <Navigation />
@@ -29,11 +33,18 @@ export function Routes(props) {
             render={(props) => <CadastroProduto addProduto={addProduto} />}
           />
 
-          <Route
-            path="/CadastroUsuario"
-            exact
-            render={(props) => <CadastroUsuario />}
-          />
+          <Route //
+            path="/CadastroUsuario" //
+            exact //
+            render={(props) => <CadastroUsuario addCadastro={addCadastro} />} //
+          /> //
+
+          <Route //
+            path="/Login" //
+            exact //
+            render={(props) => <CadastroUsuario addCadastro={cadastros} />} //
+          /> //
+
         </Switch>
       </div>
     </BrowserRouter>

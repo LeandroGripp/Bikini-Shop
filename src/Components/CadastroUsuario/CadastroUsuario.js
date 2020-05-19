@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './CadastroUsuario.css';
-
+import Swal from "sweetalert2";
+import { Button } from "react-bootstrap"
 /* 
 TO DO:
   - Deixar bonito (SweetAlert/inclusoes no .css -> BootStrap/MaterialUI)
@@ -28,72 +29,85 @@ export function CadastroUsuario (props) {
     setCargo(event.target.value);
   }
 
-  function onSubmit(){
+  function handleSubmit(){
     if (uname === ""){
-      alert("Submeta um nome");
+      Swal.fire("error","Submeta um NOME!");
     }else if (email === ""){
-      alert("Submeta um email");
+      Swal.fire("Submeta um EMAIL",);
     }else if (password === ""){
-      alert("Submeta uma senha");
+      Swal.fire("Submeta uma SENHA");
     }else{
-      alert("Cadastro realizado");
+      Swal.fire("CADASTRO FEITO COM SUCESSO");
     }
   }
 
+  function buttomSubmit(){
+    var cadastro = {
+      name: uname,
+      pwd: password,
+    };
+    props.addCadastro(cadastro);
+  }
+
   return(
-      <div className="d-flex flex-column align-items-center background">
-        <form className="formback d-flex flex-column">
+    <div className="d-flex flex-column align-items-center background">
+      <form className="formback d-flex flex-column">
         <h1 className="titulo">Cadastro de Usuários</h1>           
           <div>
-          <label className="text">Nome: </label>
-            <input
-              className="input"
-              type="text"
-              placeholder="Insira o nome"
-              onChange={handleUname}
-              value={uname}
-              required
-            />
+            <label className="text">Nome: </label>
+              <input
+                className="input"
+                type="text"
+                placeholder="Insira o nome"
+                onChange={handleUname}
+                value={uname}
+                required
+              />
           </div>
 
           <div>
-          <label className="text">E-Mail: </label>
-            <input
-              className="input"
-              type="email"
-              placeholder="Insira o email"
-              onChange={handleEmail}
-              value={email}
-              required
-            />
+            <label className="text">E-Mail: </label>
+              <input
+                className="input"
+                type="email"
+                placeholder="Insira o email"
+                onChange={handleEmail}
+                value={email}
+                required
+              />
           </div>
 
           <div>
-          <label className="text">Senha: </label>
-            <input
-            className="input"
-            type="password"
-            placeholder="Insira a senha"
-            onChange={handlePwd}
-            value={password}          
-            required />
+            <label className="text">Senha: </label>
+              <input
+                className="input"
+                type="password"
+                placeholder="Insira a senha"
+                onChange={handlePwd}
+                value={password}          
+                required />
           </div>
 
           <div>
-          <label className="text">Cargo: </label>
-            <select
-              className="input"
-              required
-              onChange={handleCargo}
-              value={cargo}
-              placeholder="Selecione o cargo"
-            >
-              <option>cargo1</option>
-              <option>cargo2</option>
-              <option>cargo3</option>
-            </select>
+            <label className="text">Cargo: </label>
+              <select
+                className="input"
+                required
+                onChange={handleCargo}
+                value={cargo}
+                placeholder="Selecione o cargo"
+              >
+                <option>cargo1</option>
+                <option>cargo2</option>
+                <option>cargo3</option>
+              </select>
           </div>
-         <input className="btn" type="submit" onClick={onSubmit} value="Enviar" />  
+          <input 
+            className="btn" 
+            type="submit" 
+            onClick={handleSubmit} 
+            value="Enviar"
+          />  
       </form> 
     </div>
   )

@@ -19,5 +19,8 @@
 
 .input {
     background-color: #113618;
-
+    border-radius: 5%;
+    border: 1px;
+    margin-top: 10px;
+    font-family: Montserrat;
 }
