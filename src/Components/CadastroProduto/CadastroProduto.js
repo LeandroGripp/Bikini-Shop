@@ -77,7 +77,6 @@ export function CadastroProduto(props) {
       type: tipo,
       units: unidades,
     };
-    console.log(produto);
     props.addProduto(produto);
   }
 

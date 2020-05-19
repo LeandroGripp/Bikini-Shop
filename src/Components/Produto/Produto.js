@@ -6,14 +6,11 @@ export function Produto(props) {
   const codigo = props.produto.ref;
   const [nome, setNome] = useState(props.produto.name);
   const [descricao, setDescricao] = useState(props.produto.description);
-  const [tamanho, setTamanho] = useState(props.produto.size);
+  const tamanho = props.produto.size;
   const [preco, setPreco] = useState(props.produto.price);
   const [tipo, setTipo] = useState(props.produto.type);
   const [unidades, setUnidades] = useState(props.produto.units);
 
-  function handleChangeTamanho(event) {
-    setTamanho(event.target.value);
-  }
   function handleChangePreco(event) {
     setPreco(event.target.value);
   }
@@ -32,6 +29,19 @@ export function Produto(props) {
 
   function handleEditClick() {
     setEditing(true);
+  }
+  function handleSaveClick() {
+    const produtoAEditar = {
+      name: nome,
+      description: descricao,
+      ref: codigo,
+      size: tamanho,
+      price: preco,
+      type: tipo,
+      units: unidades,
+    };
+    props.editProduto(produtoAEditar);
+    setEditing(false);
   }
 
   if (editing) {
@@ -58,19 +68,7 @@ export function Produto(props) {
               <option>Promoção</option>
             </select>
           </div>
-          <div
-            className="col-1 px-0"
-            value={tamanho}
-            onChange={handleChangeTamanho}
-          >
-            <select>
-              <option>PP</option>
-              <option>P</option>
-              <option>M</option>
-              <option>G</option>
-              <option>GG</option>
-            </select>
-          </div>
+          <div className="col-1 px-0">{tamanho}</div>
           <div className="col-2 px-0">
             <input
               value={preco}
@@ -86,28 +84,27 @@ export function Produto(props) {
             ></input>
           </div>
         </div>
-        <span className="product-btn material-icons" onClick={handleEditClick}>
+        <span className="product-btn material-icons" onClick={handleSaveClick}>
           save_alt
         </span>
-        
       </div>
     );
   } else {
     return (
       <div className="d-flex align-items-center justify-content-between">
         <div className="row product-header product-container py-3 px-0 my-1 ">
-          <div className="col-1 px-0">{props.produto.ref}</div>
-          <div className="col-2 px-0">{props.produto.name}</div>
-          <div className="col-3 px-0">{props.produto.description}</div>
-          <div className="col-2 px-0">{props.produto.type}</div>
-          <div className="col-1 px-0">{props.produto.size}</div>
-          <div className="col-2 px-0">{props.produto.price}</div>
-          <div className="col-1 px-0">{props.produto.units}</div>
+          <div className="col-1 px-0">{codigo}</div>
+          <div className="col-2 px-0">{nome}</div>
+          <div className="col-3 px-0">{descricao}</div>
+          <div className="col-2 px-0">{tipo}</div>
+          <div className="col-1 px-0">{tamanho}</div>
+          <div className="col-2 px-0">{preco}</div>
+          <div className="col-1 px-0">{unidades}</div>
         </div>
         <span className="product-btn material-icons" onClick={handleEditClick}>
           edit
         </span>
-        <span class="material-icons">delete</span>
+        <span className="product-btn material-icons">delete</span>
       </div>
     );
   }

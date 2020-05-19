@@ -16,7 +16,7 @@ export function Estoque(props) {
       </div>
       {props.produtos.length > 0
         ? props.produtos.map((produto, index) => (
-            <Produto key={"prod-" + (index + 1)} produto={produto} />
+            <Produto key={"prod-" + (index + 1)} produto={produto} editProduto={props.editProduto} />
           ))
         : "No products"}
     </div>
