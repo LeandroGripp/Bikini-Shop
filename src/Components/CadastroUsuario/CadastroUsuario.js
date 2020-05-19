@@ -55,8 +55,9 @@ export function CadastroUsuario (props) {
       <form className="formback d-flex flex-column">
         <h1 className="titulo">Cadastro de Usuários</h1>           
           <div>
-            <label className="text">Nome: </label>
+            <label className="text" for="nome">Nome: </label>
               <input
+                id="nome"
                 className="input"
                 type="text"
                 placeholder="Insira o nome"
@@ -67,8 +68,9 @@ export function CadastroUsuario (props) {
           </div>
 
           <div>
-            <label className="text">E-Mail: </label>
+            <label className="text" for="email">E-Mail: </label>
               <input
+                id="email"
                 className="input"
                 type="email"
                 placeholder="Insira o email"
@@ -79,8 +81,9 @@ export function CadastroUsuario (props) {
           </div>
 
           <div>
-            <label className="text">Senha: </label>
+            <label className="text" for="senha">Senha: </label>
               <input
+                id="senha"
                 className="input"
                 type="password"
                 placeholder="Insira a senha"
@@ -90,8 +93,9 @@ export function CadastroUsuario (props) {
           </div>
 
           <div>
-            <label className="text">Cargo: </label>
+            <label className="text" for="cargo">Cargo: </label>
               <select
+                id="cargo"
                 className="input"
                 required
                 onChange={handleCargo}
