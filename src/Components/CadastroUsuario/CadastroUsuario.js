@@ -41,14 +41,13 @@ export function CadastroUsuario (props) {
   }
 
   return(
-      <div className="align-items-center">
-        <form className="formback">
-        <h2>Cadastro de Usuários</h2> 
-          <ul>
-          
+      <div className="d-flex flex-column align-items-center background">
+        <form className="formback d-flex flex-column">
+        <h1 className="titulo">Cadastro de Usuários</h1>           
           <div>
           <label className="text">Nome: </label>
             <input
+              className="input"
               type="text"
               placeholder="Insira o nome"
               onChange={handleUname}
@@ -60,6 +59,7 @@ export function CadastroUsuario (props) {
           <div>
           <label className="text">E-Mail: </label>
             <input
+              className="input"
               type="email"
               placeholder="Insira o email"
               onChange={handleEmail}
@@ -71,6 +71,7 @@ export function CadastroUsuario (props) {
           <div>
           <label className="text">Senha: </label>
             <input
+            className="input"
             type="password"
             placeholder="Insira a senha"
             onChange={handlePwd}
@@ -81,6 +82,7 @@ export function CadastroUsuario (props) {
           <div>
           <label className="text">Cargo: </label>
             <select
+              className="input"
               required
               onChange={handleCargo}
               value={cargo}
@@ -91,10 +93,7 @@ export function CadastroUsuario (props) {
               <option>cargo3</option>
             </select>
           </div>
-          </ul>
-
-      <input className="btn" type="submit" onClick={onSubmit} value="Enviar" />
-      
+         <input className="btn" type="submit" onClick={onSubmit} value="Enviar" />  
       </form> 
     </div>
   )
