@@ -1,7 +1,7 @@
 .product-header {
   border-radius: 5px;
   background-color: #f0b8f1;
-  width: 100%;
+  width: 90%;
   font-weight: bold;
   margin-left: 0;
   margin-right: 0;
@@ -9,6 +9,6 @@
 }
 
 .container {
-  max-width: 700px;
+  max-width: 800px;
  
 }
