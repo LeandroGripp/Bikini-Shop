@@ -1,37 +1,15 @@
 import React, { useState } from 'react';
 import './CadastroUsuario.css';
 
-
 /* 
 TO DO:
-
-  - Deixar bonito (SweetAlert/-webkit-linear-gradient no App.css/inclusoes no .css -> BootStrap/MaterialUI)
+  - Deixar bonito (SweetAlert/inclusoes no .css -> BootStrap/MaterialUI)
   - Passar dados para serem usados no form de login (Ver sessionStorage/localStorage -> ver addProdutos())
   - Melhorar validações (Regex no password )
   - Resposividade -> Bootstrap
-
 */
 
-export function CadastroUsuario (props) {
-  /*constructor(props){
-    super (props);
-    this.state = {
-      uname = "";
-      email = "";
-      senha = "";
-     // cargo = 'cargo1';
-    }
-  }
-  changeHandler = (event) => {
-    let name = event.target.name;
-    let eml = event.target.email;
-    let pwd = event.target.value;
-
-    this.setState({name:eml:pwd});
-  }
-  */
-   
-
+export function CadastroUsuario (props) {   
   const [uname, setUname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
