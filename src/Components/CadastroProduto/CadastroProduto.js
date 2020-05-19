@@ -92,6 +92,7 @@ export function CadastroProduto(props) {
             <Col sm={6}>
               <Form.Control
                 type="text"
+                className="inputProd"
                 onChange={handleChangeNome}
                 value={nome}
               />
@@ -106,6 +107,7 @@ export function CadastroProduto(props) {
                 type="text"
                 onChange={handleChangeDescricao}
                 value={descricao}
+                className="inputProd"
               />
             </Col>
           </Form.Group>
@@ -118,6 +120,7 @@ export function CadastroProduto(props) {
                 type="number"
                 onChange={handleChangeCodigo}
                 value={codigo}
+                className="inputProd"
               />
             </Col>
           </Form.Group>
@@ -130,6 +133,7 @@ export function CadastroProduto(props) {
                 as={"select"}
                 onChange={handleChangeTamanho}
                 value={tamanho}
+                className="inputProd"
               >
                 <option>PP</option>
                 <option>P</option>
@@ -148,6 +152,7 @@ export function CadastroProduto(props) {
                 type="number"
                 onChange={handleChangePreco}
                 value={preco}
+                className="inputProd"
               />
             </Col>
           </Form.Group>
@@ -160,6 +165,7 @@ export function CadastroProduto(props) {
                 as={"select"}
                 onChange={handleChangeTipo}
                 value={tipo}
+                className="inputProd"
               >
                 <option>Biquini</option>
                 <option>Maiô</option>
@@ -178,6 +184,7 @@ export function CadastroProduto(props) {
                 type="number"
                 onChange={handleChangeUnidades}
                 value={unidades}
+                className="inputProd"
               />
             </Col>
           </Form.Group>

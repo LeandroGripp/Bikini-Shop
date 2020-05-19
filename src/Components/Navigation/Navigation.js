@@ -36,11 +36,9 @@ export function Navigation(props) {
       className="navigationBar"
       collapseOnSelect
       expand="md"
-      bg="dark"
-      variant="dark"
       expanded={navExpanded}
     >
-      <Navbar.Brand href="/">Bikini shop</Navbar.Brand>
+      <Navbar.Brand className="NavTitle" href="/">Bali Swimwear</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={toggleNavbar}/>
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
@@ -50,13 +48,6 @@ export function Navigation(props) {
             className={"navlink p-2 " + (active.Login && "active")}
           >
             Login
-          </Link>
-          <Link
-            to="/Estoque"
-            onClick={chooseActive}
-            className={"navlink p-2 " + (active.Estoque && "active")}
-          >
-            Estoque
           </Link>
           <Link
             to="/CadastroUsuario"
@@ -71,6 +62,13 @@ export function Navigation(props) {
             className={"navlink p-2 " + (active.CadastroProduto && "active")}
           >
             Cadastro Produto
+          </Link>
+          <Link
+            to="/Estoque"
+            onClick={chooseActive}
+            className={"navlink p-2 " + (active.Estoque && "active")}
+          >
+            Estoque
           </Link>
         </Nav>
         <Nav>

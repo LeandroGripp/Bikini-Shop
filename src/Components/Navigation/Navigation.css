@@ -8,10 +8,10 @@
 }
 
 .loginStatus {
-  color: #f0b8f1;
+  color: #FA6C2B ;
 }
 .navlink {
-  color: white !important;
+  color:#5FE8B6  !important;
 }
 .navlink:hover {
   text-decoration: none;
@@ -20,7 +20,13 @@
 }
 .active {
   border-radius: 3px;
-  background-color: #f0b8f1 !important;
+  background-color: #5FCFE8 !important;
   color: #343a40 !important;
   font-weight: bold;
+}
+.navigationBar{
+  background-color:#343738 ;
+}
+.NavTitle{
+  color:#5FE8B6 !important;
 }

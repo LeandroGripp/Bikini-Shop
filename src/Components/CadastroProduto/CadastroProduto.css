@@ -29,11 +29,16 @@
 
 .caixa {
   max-width: 750px;
-  background-color:rgb(196, 191, 191);
+  background-color:#5FCFE8;
   margin: auto;
   justify-content: center;
   align-items: center;
   display: flex;
   padding: 30px 65px;
   border-radius: 6px;
+}
+.inputProd{
+  background-color: rgb(43, 113, 129);
+  opacity:0.7;
+  color: white;
 }

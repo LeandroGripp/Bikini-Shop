@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './CadastroUsuario.css';
 import Swal from "sweetalert2";
-import { Button } from "react-bootstrap"
+
 /* 
 TO DO:
   - Deixar bonito (SweetAlert/inclusoes no .css -> BootStrap/MaterialUI)
