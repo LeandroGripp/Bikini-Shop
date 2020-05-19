@@ -5,8 +5,8 @@ import { Routes } from "./Routes";
 
 function App() {
 
-  const produtos = JSON.parse(sessionStorage.getItem("produtos")) || [];
-  const cadastros = JSON.parse(sessionStorage.getItem("cadastros")) || []; //
+  const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+  const cadastros = JSON.parse(localStorage.getItem("cadastros")) || []; //
 
   function addProduto(produto) {
     produtos.push(produto);
@@ -35,7 +35,7 @@ function App() {
 
   function addCadastro(cadastro){ //
     cadastro.push(cadastro); //
-    sessionStorage.setItem("cadastros", JSON.stringify(cadastros)); //
+    localStorage.setItem("cadastros", JSON.stringify(cadastros)); //
   } //
 
   return (

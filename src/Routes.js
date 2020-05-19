@@ -37,17 +37,17 @@ export function Routes(props) {
             render={(props) => <CadastroProduto addProduto={addProduto} />}
           />
 
-          <Route //
-            path="/CadastroUsuario" //
-            exact //
+          <Route 
+            path="/CadastroUsuario" 
+            exact 
             render={(props) => <CadastroUsuario addCadastro={addCadastro} />} //
-          /> //
+          /> 
 
-          <Route //
-            path="/Login" //
-            exact //
+          <Route 
+            path="/Login" 
+            exact 
             render={(props) => <CadastroUsuario addCadastro={cadastros} />} //
-          /> //
+          /> 
 
         </Switch>
       </div>

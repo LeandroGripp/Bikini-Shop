@@ -20,7 +20,7 @@ export function Navigation(props) {
       CadastroUsuario: false,
       CadastroProduto: false,
     };
-    const substIndex = event.target.href.indexOf("/", 7) + 1;
+    const substIndex = event.target.href.lastIndexOf("/") + 1;
     const newActive = event.target.href.substring(substIndex);
     buffer[newActive] = true;
     setActive(buffer);
