@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './CadastroUsuario.css';
 import Swal from "sweetalert2";
+import { Form } from 'react-bootstrap';
 
 /* 
 TO DO:
-  - Deixar bonito (SweetAlert/inclusoes no .css -> BootStrap/MaterialUI)
-  - Passar dados para serem usados no form de login (Ver sessionStorage/localStorage -> ver addProdutos())
+  - Deixar bonito (Sweetalert/inclusoes no .css -> BootStrap/MaterialUI)
   - Melhorar validações (Regex no password )
-  - Resposividade -> Bootstrap
+  - Responsividade -> Bootstrap
 */
 
 export function CadastroUsuario (props) {   
@@ -57,7 +57,6 @@ export function CadastroUsuario (props) {
       <form className="formback d-flex flex-column">
         <h1 className="titulo">Cadastro de Usuários</h1>           
           <div>
-            <label className="text" for="nome">Nome: </label>
               <input
                 id="nome"
                 className="input"
@@ -70,7 +69,6 @@ export function CadastroUsuario (props) {
           </div>
 
           <div>
-            <label className="text" for="email">E-Mail: </label>
               <input
                 id="email"
                 className="input"
@@ -83,7 +81,6 @@ export function CadastroUsuario (props) {
           </div>
 
           <div>
-            <label className="text" for="senha">Senha: </label>
               <input
                 id="senha"
                 className="input"
@@ -95,7 +92,6 @@ export function CadastroUsuario (props) {
           </div>
 
           <div>
-            <label className="text" for="cargo">Cargo: </label>
               <select
                 id="cargo"
                 className="input"
@@ -109,12 +105,15 @@ export function CadastroUsuario (props) {
                 <option>cargo3</option>
               </select>
           </div>
-          <input 
-            className="btn" 
-            type="submit" 
-            onClick={handleSubmit} 
-            value="Enviar"
-          />  
+
+          <div>
+            <input 
+              className="btn" 
+              type="submit" 
+              onClick={handleSubmit} 
+              value="Enviar"
+            />  
+          </div>
       </form> 
     </div>
   )
