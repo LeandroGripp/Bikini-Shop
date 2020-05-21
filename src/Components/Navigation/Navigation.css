@@ -29,4 +29,17 @@
 }
 .NavTitle{
   color:#5FE8B6 !important;
+  font-size: 1.4em;
+  padding-right: 8px;
+}
+.NavTitle:hover {
+  text-decoration: none;
+}
+.navbrand-logo {
+  max-height: 40px;
+  height: auto;
+  width: auto;
+}
+.navbar-toggler-icon {
+  color: #5FE8B6 !important;
 }

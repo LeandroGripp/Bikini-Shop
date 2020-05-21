@@ -15,15 +15,20 @@ export function Routes(props) {
   const removeProduto = props.removeProduto;
 
   const addCadastro = props.addCadastro; 
-  const cadastros = props.cadastros; 
+  const cadastros = props.cadastros;
+
+  const loggedIn = props.loggedIn;
+  
+  const loginName = props.loginName;
+  const doLogin = props.doLogin;
 
   return (
     <BrowserRouter>
-      <Navigation />
+      <Navigation loggedIn={loggedIn} loginName={loginName}/>
       <div className="routesContainer">
         <Switch>
           <Route path="/" exact render={(props) => <Home />} />
-          <Route path="/Login" exact render={(props) => <Login />} />
+          <Route path="/Login" exact render={(props) => <Login cadastros={cadastros} doLogin={doLogin} />} />
           <Route
             path="/Estoque"
             exact
@@ -43,11 +48,11 @@ export function Routes(props) {
             render={(props) => <CadastroUsuario addCadastro={addCadastro} />} //
           /> 
 
-          <Route 
+          {/* <Route 
             path="/Login" 
             exact 
-            render={(props) => <CadastroUsuario addCadastro={cadastros} />} //
-          /> 
+            render={(props) => <Login cadastros={cadastros} doLogin={doLogin}/>} //
+          />  */}
 
         </Switch>
       </div>

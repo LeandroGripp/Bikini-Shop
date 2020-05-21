@@ -44,8 +44,10 @@ export function CadastroUsuario (props) {
 
   function buttomSubmit(){
     var cadastro = {
-      name: uname,
-      pwd: password,
+      username: uname,
+      password: password,
+      email: email,
+      cargo: cargo
     };
     props.addCadastro(cadastro);
   }
