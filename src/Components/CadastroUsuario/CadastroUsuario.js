@@ -14,6 +14,7 @@ export function CadastroUsuario (props) {
   const [uname, setUname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
   const [cargo, setCargo] = useState("cargo1");
 
   function handleUname(event){
@@ -25,20 +26,37 @@ export function CadastroUsuario (props) {
   function handlePwd(event){
     setPassword(event.target.value);
   }
+  function handlePwd2(event){
+    setPassword2(event.target.value);
+  }
   function handleCargo(event){
     setCargo(event.target.value);
   }
 
   function handleSubmit(){
-    if (uname === ""){
-      Swal.fire("Submeta um NOME!");
-    }else if (email === ""){
-      Swal.fire("Submeta um EMAIL");
-    }else if (password === ""){
-      Swal.fire("Submeta uma SENHA");
+    let cond = false;
+
+    if (uname === undefined){
+      Swal.fire("Erro!","Submeta um NOME!","error");
+      cond = false;
+    }else if (email === undefined){
+      Swal.fire("Erro!","Submeta um EMAIL!","error");
+      cond = false;
+    }else if (password === undefined){
+      Swal.fire("Erro!","Submeta uma SENHA!","error");
+      cond = false;
+    }else if (password2 === undefined){
+      Swal.fire("Erro!","Submeta a CONFIRMAÇÃO DE SENHA","error");
+      cond = false;
     }else{
-      buttomSubmit();
-      Swal.fire("CADASTRO FEITO COM SUCESSO");
+      if(password !== password2){
+        Swal.fire("Erro!","Senhas não coincidem","error");
+        cond = false;
+      }else{
+        cond = true;     
+        buttomSubmit();
+        Swal.fire("CADASTRO FEITO COM SUCESSO!","sucess");
+      }
     }
   }
 
@@ -61,7 +79,7 @@ export function CadastroUsuario (props) {
                 id="nome"
                 className="input"
                 type="text"
-                placeholder="Insira o nome"
+                placeholder="INSIRA O NOME"
                 onChange={handleUname}
                 value={uname}
                 required
@@ -73,7 +91,7 @@ export function CadastroUsuario (props) {
                 id="email"
                 className="input"
                 type="email"
-                placeholder="Insira o email"
+                placeholder="INSIRA O EMAIL"
                 onChange={handleEmail}
                 value={email}
                 required
@@ -85,10 +103,23 @@ export function CadastroUsuario (props) {
                 id="senha"
                 className="input"
                 type="password"
-                placeholder="Insira a senha"
+                placeholder="CRIE UMA SENHA"
                 onChange={handlePwd}
                 value={password}          
-                required />
+                required 
+              />
+          </div>
+
+          <div>
+            <input
+              id="confirm senha"
+              className="input"
+              type="password"
+              placeholder="CONFIRME SUA SENHA"
+              onChange={handlePwd2}
+              value={password2}
+              required 
+            />
           </div>
 
           <div>
@@ -98,7 +129,7 @@ export function CadastroUsuario (props) {
                 required
                 onChange={handleCargo}
                 value={cargo}
-                placeholder="Selecione o cargo"
+                placeholder="SELECIONE O CARGO"
               >
                 <option>cargo1</option>
                 <option>cargo2</option>
