@@ -35,11 +35,11 @@ export function Navigation(props) {
     <Navbar
       className="navigationBar"
       collapseOnSelect
-      expand="md"
+      expand="lg"
       expanded={navExpanded}
     >
-      <Navbar.Brand className="NavTitle" href="/">Bali Swimwear</Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={toggleNavbar}/>
+      <Link className="NavTitle" to="/"><img className="navbrand-logo" src="./icone.png" alt="logo"/>Bali Swimwear</Link>
+      <Navbar.Toggle className="toggle-btn" aria-controls="responsive-navbar-nav" onClick={toggleNavbar}/>
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Link
@@ -73,7 +73,8 @@ export function Navigation(props) {
         </Nav>
         <Nav>
           <Nav.Item className="loginStatus" href="#">
-            You are not logged in
+            {props.loggedIn? "Você está logado como ":"Você não está logado"}
+            <strong>{props.loggedIn && props.loginName}</strong>
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>
