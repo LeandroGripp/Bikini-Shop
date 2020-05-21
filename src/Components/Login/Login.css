@@ -14,7 +14,7 @@
   font-size: large;
   font-family: Montserrat;
   font-weight: 600;
-  font-variant: small-caps;
+  /* font-variant: small-caps; */
   opacity: 0.7;
   border-radius: 3px;
   background-color: #113618;

@@ -1,12 +1,21 @@
-import React from "react";
-
+import React, { useState } from "react";
 import "./App.css";
 import { Routes } from "./Routes";
 
 function App() {
-
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [loginName, setLoginName] = useState("");
   const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
-  const cadastros = JSON.parse(localStorage.getItem("cadastros")) || []; //
+  const cadastros = JSON.parse(localStorage.getItem("cadastros")) || [
+    {
+      username: "master",
+      password: "master",
+      email: "master@bailswimwear.com.br",
+      cargo: "cargo1",
+    },
+  ]; //
+  console.log(loggedIn);
+  console.log(loginName);
 
   function addProduto(produto) {
     produtos.push(produto);
@@ -15,7 +24,7 @@ function App() {
   function editProduto(produto) {
     let indexToEdit;
     produtos.forEach((item, index) => {
-      if(item.ref === produto.ref && item.size === produto.size) {
+      if (item.ref === produto.ref && item.size === produto.size) {
         indexToEdit = index;
       }
     });
@@ -25,7 +34,7 @@ function App() {
   function removeProduto(produto) {
     let indexToEdit;
     produtos.forEach((item, index) => {
-      if(item.ref === produto.ref && item.size === produto.size) {
+      if (item.ref === produto.ref && item.size === produto.size) {
         indexToEdit = index;
       }
     });
@@ -33,10 +42,16 @@ function App() {
     localStorage.setItem("produtos", JSON.stringify(produtos));
   }
 
-  function addCadastro(cadastro){ //
+  function addCadastro(cadastro) {
+    //
     cadastro.push(cadastro); //
     localStorage.setItem("cadastros", JSON.stringify(cadastros)); //
   } //
+
+  function doLogin(username) {
+    setLoggedIn(true);
+    setLoginName(username);
+  }
 
   return (
     <div className="App">
@@ -46,12 +61,11 @@ function App() {
         addProduto={addProduto}
         editProduto={editProduto}
         removeProduto={removeProduto}
-    
-        cadastro={cadastros}      
-        addCadastro={addCadastro} 
-
-
-
+        cadastros={cadastros}
+        addCadastro={addCadastro}
+        loggedIn={loggedIn}
+        loginName={loginName}
+        doLogin={doLogin}
       />
     </div>
   );
