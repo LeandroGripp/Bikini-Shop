@@ -3,8 +3,8 @@ import "./App.css";
 import { Routes } from "./Routes";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [loginName, setLoginName] = useState("");
+  const [loggedIn, setLoggedIn] = useState(JSON.parse(localStorage.getItem("loggedIn"))||false);
+  const [loginName, setLoginName] = useState(localStorage.getItem("loginName")||"");
   const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
   const cadastros = JSON.parse(localStorage.getItem("cadastros")) || [
     {
@@ -14,8 +14,6 @@ function App() {
       cargo: "cargo1",
     },
   ]; //
-  console.log(loggedIn);
-  console.log(loginName);
 
   function addProduto(produto) {
     produtos.push(produto);
@@ -44,13 +42,21 @@ function App() {
 
   function addCadastro(cadastro) {
     //
-    cadastro.push(cadastro); //
+    cadastros.push(cadastro); //
     localStorage.setItem("cadastros", JSON.stringify(cadastros)); //
   } //
 
   function doLogin(username) {
     setLoggedIn(true);
+    localStorage.setItem("loggedIn", JSON.stringify(true));
     setLoginName(username);
+    localStorage.setItem("loginName", username);
+  }
+  function logout() {
+    setLoggedIn(false);
+    localStorage.setItem("loggedIn", JSON.stringify(false));
+    setLoginName("");
+    localStorage.setItem("loginName", "");
   }
 
   return (
@@ -66,6 +72,7 @@ function App() {
         loggedIn={loggedIn}
         loginName={loginName}
         doLogin={doLogin}
+        logout={logout}
       />
     </div>
   );

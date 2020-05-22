@@ -24,3 +24,9 @@
     margin-top: 10px;
     font-family: Montserrat;
 }
+
+@media all and (max-width: 570px) {
+    .formback {
+      width: 100%;
+    }
+  }

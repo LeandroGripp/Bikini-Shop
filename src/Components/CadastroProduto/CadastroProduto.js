@@ -21,24 +21,24 @@ export function CadastroProduto(props) {
 
   function handleSubmit() {
     if (nome === "") {
-      Swal.fire("Erro!!", "Campo NOME não foi preenchido.", "error");
+      Swal.fire("Erro!", "Campo NOME não foi preenchido.", "error");
     } else if (descricao === "") {
-      Swal.fire("Erro!!", "Campo DESCRIÇÃO não foi preenchido.", "error");
+      Swal.fire("Erro!", "Campo DESCRIÇÃO não foi preenchido.", "error");
     } else if (codigo === "") {
       Swal.fire(
-        "Erro!!",
+        "Erro!",
         "Campo CÓDIGO DE REFERÊNCIA não foi preenchido.",
         "error"
       );
     } else if (preco === 0 || preco === "0") {
-      Swal.fire("Erro!!", "Campo PREÇO não foi preenchido.", "error");
+      Swal.fire("Erro!", "Campo PREÇO não foi preenchido.", "error");
     } else if (unidades === 0 || unidades === "0") {
-      Swal.fire("Erro!!", "Campo UNIDADES não foi preenchido.", "error");
+      Swal.fire("Erro!", "Campo UNIDADES não foi preenchido.", "error");
     } else {
       handleButtonClick();
       clearSubmit();
       Swal.fire(
-        "Sucesso!!",
+        "Sucesso!",
         "Seu produto foi adicionado ao estoque.",
         "success"
       );
@@ -82,7 +82,7 @@ export function CadastroProduto(props) {
 
   return (
     <div className="background">
-    <div className="h-100 caixa d-flex flex-column align-items-center">
+    <div className="caixa d-flex flex-column align-items-center">
       <h1 className="title">Novo Produto</h1>
       <div className="d-flex flex-column">
         <Form className="d-flex flex-column">

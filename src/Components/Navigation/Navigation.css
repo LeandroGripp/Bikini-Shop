@@ -1,14 +1,14 @@
-.selected {
-  color: skyblue;
-}
-
 .navigationBar {
   z-index: 1;
   color: white;
 }
 
 .loginStatus {
-  color: #FA6C2B ;
+  color: #FA6C2B;
+  vertical-align: baseline;
+}
+.exit-btn:hover {
+  cursor: pointer;
 }
 .navlink {
   color:#5FE8B6  !important;
@@ -20,7 +20,7 @@
 }
 .active {
   border-radius: 3px;
-  background-color: #5FCFE8 !important;
+  background-color: #5FE8B6  !important;
   color: #343a40 !important;
   font-weight: bold;
 }

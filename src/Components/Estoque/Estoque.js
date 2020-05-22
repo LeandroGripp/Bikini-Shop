@@ -9,6 +9,7 @@ export function Estoque(props) {
     setStateToUpdate(!stateToUpdate);
   }
   return (
+    <div className="background">
     <div className="container d-flex flex-column px-0 mx-1">
       <div className="row product-header my-3">
         <div className="col-1 px-0">Ref</div>
@@ -24,6 +25,7 @@ export function Estoque(props) {
             <Produto key={"prod-" + (index + 1)} produto={produto} editProduto={props.editProduto} removeProduto={props.removeProduto} update={update} stateToUpdate={stateToUpdate}/>
           ))
         : "No products"}
+    </div>
     </div>
   );
 }
