@@ -4,17 +4,18 @@
   justify-content: center;
   width: 50%;
   font-family: Montserrat;
-  color: #113618;
+  color: black;
   
 }
 .mbtn:hover {
   color: white;
-  opacity: 0.8;
+  opacity: 0.9;
   background-color: black;
 }
 
 .text {
-  font-family: Roboto, sans-serif;
+  font-family: Montserrat;
+  color: black;
   align-items: center;
   justify-content: center;
   text-align: justify;
@@ -22,7 +23,7 @@
 }
 .title {
   font-weight: 700;
-  color: black;
+  color: #343738;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -39,7 +40,8 @@
   opacity: 0.95;
 }
 .inputProd{
-  background-color: rgb(43, 113, 129);
+  background-color: white;
   opacity:0.7;
-  color: white;
+  color: black;
+  font-family: Montserrat;
 }

@@ -11,18 +11,24 @@
 }
 
 .titulo {
-    font-family: Montserrat;
-    margin-bottom: 50px;
-    font-weight: 600;
+    font-size: xx-large;
+    font-weight: 700;
     color: #343738;
-}
-
-.input {
-    background-color: #113618;
-    border-radius: 5%;
-    border: 1px;
-    margin-top: 10px;
+    text-align: center;
     font-family: Montserrat;
+    margin-bottom: 25px;
+  }
+
+.inputuser {
+    background-color: white;
+    opacity:0.7;
+    color: black;
+    font-family: Montserrat;
+    font-size: medium;
+    font-weight: 600;
+    /* font-variant: small-caps; */
+    opacity: 0.7;
+    border-radius: 3px;
 }
 
 .not-logged-in-error {
