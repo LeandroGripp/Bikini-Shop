@@ -2,3 +2,14 @@ html, body {
   height: 100%;
   font-family: "Montserrat", sans-serif !important;
 }
+
+.background {
+  background-image: url(/background1.jpg);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: top;
+  padding-top: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -4,14 +4,16 @@ import "./Navigation.css";
 import { Link } from "react-router-dom";
 
 export function Navigation(props) {
-  const extension = window.location.href.substring(window.location.href.indexOf('/', 7)+1);
+  const extension = window.location.href.substring(
+    window.location.href.indexOf("/", 7) + 1
+  );
   const [active, setActive] = useState({
-    Login: extension==="Login",
-    Estoque: extension==="Estoque",
-    CadastroUsuario: extension==="CadastroUsuario",
-    CadastroProduto: extension==="CadastroProduto",
+    Login: extension === "Login",
+    Estoque: extension === "Estoque",
+    CadastroUsuario: extension === "CadastroUsuario",
+    CadastroProduto: extension === "CadastroProduto",
   });
-  const[navExpanded, setNavExpanded] = useState(false);
+  const [navExpanded, setNavExpanded] = useState(false);
 
   function chooseActive(event) {
     let buffer = {
@@ -27,8 +29,22 @@ export function Navigation(props) {
     setNavExpanded(false);
   }
 
-  function toggleNavbar(){
+  function toggleNavbar() {
     setNavExpanded(!navExpanded);
+  }
+  function renderLoginMessage() {
+    /* {props.loggedIn? "Você está logado como ":"Você não está logado"}
+            <strong>{props.loggedIn && props.loginName}</strong> */
+    if (props.loggedIn) {
+      return (
+        <div className="d-flex align-items-center justify-content-center">
+          <p className="m-0">Você está logado como <strong>{props.loginName}</strong></p>
+          <span className="material-icons exit-btn" onClick={props.logout}>exit_to_app</span>
+        </div>
+      );
+    } else {
+      return "Você não está logado";
+    }
   }
 
   return (
@@ -38,8 +54,15 @@ export function Navigation(props) {
       expand="lg"
       expanded={navExpanded}
     >
-      <Link className="NavTitle" to="/"><img className="navbrand-logo" src="./icone.png" alt="logo"/>Bali Swimwear</Link>
-      <Navbar.Toggle className="toggle-btn" aria-controls="responsive-navbar-nav" onClick={toggleNavbar}/>
+      <Link className="NavTitle" to="/" onClick={chooseActive}>
+        <img className="navbrand-logo" src="./icone.png" alt="logo"/>
+        Bali Swimwear
+      </Link>
+      <Navbar.Toggle
+        className="toggle-btn"
+        aria-controls="responsive-navbar-nav"
+        onClick={toggleNavbar}
+      />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Link
@@ -73,8 +96,9 @@ export function Navigation(props) {
         </Nav>
         <Nav>
           <Nav.Item className="loginStatus" href="#">
-            {props.loggedIn? "Você está logado como ":"Você não está logado"}
-            <strong>{props.loggedIn && props.loginName}</strong>
+            {renderLoginMessage()}
+            {/* {props.loggedIn? "Você está logado como ":"Você não está logado"}
+            <strong>{props.loggedIn && props.loginName}</strong> */}
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>

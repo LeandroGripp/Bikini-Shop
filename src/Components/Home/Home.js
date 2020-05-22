@@ -13,9 +13,9 @@ export function Home(props) {
           <Link to="/login">
             <button className="logar mx-auto" >Entrar</button>
           </Link>
-          <Link to="/CadastroUsuario">
+          {/* <Link to="/CadastroUsuario">
             <button className="cadastrar mx-auto">Cadastrar</button>
-          </Link>
+          </Link> */}
       </div>
     </div>
   );
