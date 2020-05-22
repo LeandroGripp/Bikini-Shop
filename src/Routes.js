@@ -25,7 +25,7 @@ export function Routes(props) {
   return (
     <BrowserRouter>
       <Navigation loggedIn={loggedIn} loginName={loginName} logout={logout}/>
-      <div className="routesContainer fill">
+      <div className="routesContainer fill background">
         <Switch>
           <Route path="/" exact render={(props) => <Home />} />
           <Route path="/Login" exact render={(props) => <Login cadastros={cadastros} doLogin={doLogin} />} />

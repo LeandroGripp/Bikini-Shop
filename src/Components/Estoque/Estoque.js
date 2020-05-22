@@ -16,8 +16,8 @@ export function Estoque(props) {
     );
   } else {
     return (
-      <div className="background">
-        <div className="container d-flex flex-column px-0 mx-1">
+      
+        <div className="container flex-column ">
           <div className="row product-header my-3">
             <div className="col-1 px-0">Ref</div>
             <div className="col-2 px-0">Name</div>
@@ -40,7 +40,7 @@ export function Estoque(props) {
               ))
             : "No products"}
         </div>
-      </div>
+      
     );
   }
 }

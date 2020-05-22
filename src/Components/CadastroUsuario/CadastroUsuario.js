@@ -36,10 +36,13 @@ export function CadastroUsuario(props) {
   function handleSubmit() {
     let cond = false;
 
+    console.log(email);
+    console.log(email.indexOf('@'))
+
     if (uname === "") {
       Swal.fire("Erro!", "Submeta um NOME!", "error");
       cond = false;
-    } else if (email === "" || email.indexOf('@' === -1)) {
+    } else if (email === "" || email.indexOf('@') === -1) {
       Swal.fire("Erro!", "Submeta um EMAIL!", "error");
       cond = false;
     } else if (password === "") {
@@ -75,7 +78,7 @@ export function CadastroUsuario(props) {
     )
   } else {
     return (
-    <div className="d-flex flex-column align-items-center background">
+    <div className="d-flex flex-column align-items-center bggggg">
       <form className="formback d-flex flex-column">
         <h1 className="titulo">Cadastro de Usuários</h1>
         <div>

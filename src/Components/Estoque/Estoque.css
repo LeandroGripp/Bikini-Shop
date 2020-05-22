@@ -10,5 +10,13 @@
 
 .container {
   max-width: 800px;
- 
+  background-color: #343738;
+  border-radius: 10px;
+  display: inline-flex;
+  height: auto;
+  margin-top: 16px;
+  margin-bottom: auto;
+  padding-bottom: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
 }
