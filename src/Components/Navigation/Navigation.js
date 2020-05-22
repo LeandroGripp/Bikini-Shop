@@ -54,8 +54,8 @@ export function Navigation(props) {
       expand="lg"
       expanded={navExpanded}
     >
-      <Link className="NavTitle" to="/">
-        <img className="navbrand-logo" src="./icone.png" alt="logo" />
+      <Link className="NavTitle" to="/" onClick={chooseActive}>
+        <img className="navbrand-logo" src="./icone.png" alt="logo"/>
         Bali Swimwear
       </Link>
       <Navbar.Toggle

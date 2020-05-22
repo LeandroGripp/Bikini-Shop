@@ -79,123 +79,129 @@ export function CadastroProduto(props) {
     };
     props.addProduto(produto);
   }
-
-  return (
-    <div className="background">
-    <div className="caixa d-flex flex-column align-items-center">
-      <h1 className="title">Novo Produto</h1>
-      <div className="d-flex flex-column">
-        <Form className="d-flex flex-column">
-          <Form.Group as={Form.Row} controlId="Nome do Produto">
-            <Form.Label column sm={6} className="text">
-              Nome do Produto
-            </Form.Label>
-            <Col sm={6}>
-              <Form.Control
-                type="text"
-                className="inputProd"
-                onChange={handleChangeNome}
-                value={nome}
-              />
-            </Col>
-          </Form.Group>
-          <Form.Group as={Form.Row} controlId="Descricao">
-            <Form.Label column sm={6} className="text">
-              Descrição
-            </Form.Label>
-            <Col sm={6}>
-              <Form.Control
-                type="text"
-                onChange={handleChangeDescricao}
-                value={descricao}
-                className="inputProd"
-              />
-            </Col>
-          </Form.Group>
-          <Form.Group as={Form.Row} controlId="Codigo">
-            <Form.Label column sm={6} className="text">
-              Código de referência
-            </Form.Label>
-            <Col sm={6}>
-              <Form.Control
-                type="number"
-                onChange={handleChangeCodigo}
-                value={codigo}
-                className="inputProd"
-              />
-            </Col>
-          </Form.Group>
-          <Form.Group as={Form.Row} controlId="Tamanho">
-            <Form.Label column sm={6} className="text">
-              Tamanho
-            </Form.Label>
-            <Col sm={6}>
-              <Form.Control
-                as={"select"}
-                onChange={handleChangeTamanho}
-                value={tamanho}
-                className="inputProd"
-              >
-                <option>PP</option>
-                <option>P</option>
-                <option>M</option>
-                <option>G</option>
-                <option>GG</option>
-              </Form.Control>
-            </Col>
-          </Form.Group>
-          <Form.Group as={Form.Row} controlId="Preco">
-            <Form.Label column sm={6} className="text">
-              Preço
-            </Form.Label>
-            <Col sm={6}>
-              <Form.Control
-                type="number"
-                onChange={handleChangePreco}
-                value={preco}
-                className="inputProd"
-              />
-            </Col>
-          </Form.Group>
-          <Form.Group as={Form.Row} controlId="Tipo">
-            <Form.Label column sm={6} className="text">
-              Tipo de Produto
-            </Form.Label>
-            <Col sm={6}>
-              <Form.Control
-                as={"select"}
-                onChange={handleChangeTipo}
-                value={tipo}
-                className="inputProd"
-              >
-                <option>Biquini</option>
-                <option>Maiô</option>
-                <option>Canga</option>
-                <option>Saia de Praia</option>
-                <option>Promoção</option>
-              </Form.Control>
-            </Col>
-          </Form.Group>
-          <Form.Group as={Form.Row} controlId="Unidades">
-            <Form.Label column sm={6} className="text">
-              Unidades
-            </Form.Label>
-            <Col sm={6}>
-              <Form.Control
-                type="number"
-                onChange={handleChangeUnidades}
-                value={unidades}
-                className="inputProd"
-                
-              />
-            </Col>
-          </Form.Group>
-        </Form>
-        <button className="mbtn btn mx-auto my-5" onClick={handleSubmit}>
-          Enviar
-        </button>
+  if (!props.loggedIn) {
+    return (
+      <div className="not-logged-in-error">
+        Você deve estar logado para acessar essa página
       </div>
-    </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="background">
+        <div className="caixa d-flex flex-column align-items-center">
+          <h1 className="title">Novo Produto</h1>
+          <div className="d-flex flex-column">
+            <Form className="d-flex flex-column">
+              <Form.Group as={Form.Row} controlId="Nome do Produto">
+                <Form.Label column sm={6} className="text">
+                  Nome do Produto
+                </Form.Label>
+                <Col sm={6}>
+                  <Form.Control
+                    type="text"
+                    className="inputProd"
+                    onChange={handleChangeNome}
+                    value={nome}
+                  />
+                </Col>
+              </Form.Group>
+              <Form.Group as={Form.Row} controlId="Descricao">
+                <Form.Label column sm={6} className="text">
+                  Descrição
+                </Form.Label>
+                <Col sm={6}>
+                  <Form.Control
+                    type="text"
+                    onChange={handleChangeDescricao}
+                    value={descricao}
+                    className="inputProd"
+                  />
+                </Col>
+              </Form.Group>
+              <Form.Group as={Form.Row} controlId="Codigo">
+                <Form.Label column sm={6} className="text">
+                  Código de referência
+                </Form.Label>
+                <Col sm={6}>
+                  <Form.Control
+                    type="number"
+                    onChange={handleChangeCodigo}
+                    value={codigo}
+                    className="inputProd"
+                  />
+                </Col>
+              </Form.Group>
+              <Form.Group as={Form.Row} controlId="Tamanho">
+                <Form.Label column sm={6} className="text">
+                  Tamanho
+                </Form.Label>
+                <Col sm={6}>
+                  <Form.Control
+                    as={"select"}
+                    onChange={handleChangeTamanho}
+                    value={tamanho}
+                    className="inputProd"
+                  >
+                    <option>PP</option>
+                    <option>P</option>
+                    <option>M</option>
+                    <option>G</option>
+                    <option>GG</option>
+                  </Form.Control>
+                </Col>
+              </Form.Group>
+              <Form.Group as={Form.Row} controlId="Preco">
+                <Form.Label column sm={6} className="text">
+                  Preço
+                </Form.Label>
+                <Col sm={6}>
+                  <Form.Control
+                    type="number"
+                    onChange={handleChangePreco}
+                    value={preco}
+                    className="inputProd"
+                  />
+                </Col>
+              </Form.Group>
+              <Form.Group as={Form.Row} controlId="Tipo">
+                <Form.Label column sm={6} className="text">
+                  Tipo de Produto
+                </Form.Label>
+                <Col sm={6}>
+                  <Form.Control
+                    as={"select"}
+                    onChange={handleChangeTipo}
+                    value={tipo}
+                    className="inputProd"
+                  >
+                    <option>Biquini</option>
+                    <option>Maiô</option>
+                    <option>Canga</option>
+                    <option>Saia de Praia</option>
+                    <option>Promoção</option>
+                  </Form.Control>
+                </Col>
+              </Form.Group>
+              <Form.Group as={Form.Row} controlId="Unidades">
+                <Form.Label column sm={6} className="text">
+                  Unidades
+                </Form.Label>
+                <Col sm={6}>
+                  <Form.Control
+                    type="number"
+                    onChange={handleChangeUnidades}
+                    value={unidades}
+                    className="inputProd"
+                  />
+                </Col>
+              </Form.Group>
+            </Form>
+            <button className="mbtn btn mx-auto my-5" onClick={handleSubmit}>
+              Enviar
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }

@@ -69,8 +69,12 @@ export function CadastroUsuario(props) {
     };
     props.addCadastro(cadastro);
   }
-
-  return (
+  if(!props.loggedIn) {
+    return (
+      <div className="not-logged-in-error">Você deve estar logado para acessar essa página</div>
+    )
+  } else {
+    return (
     <div className="d-flex flex-column align-items-center background">
       <form className="formback d-flex flex-column">
         <h1 className="titulo">Cadastro de Usuários</h1>
@@ -144,4 +148,6 @@ export function CadastroUsuario(props) {
       </form>
     </div>
   );
+  }
+  
 }

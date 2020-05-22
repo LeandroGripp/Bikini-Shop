@@ -33,19 +33,19 @@ export function Routes(props) {
             path="/Estoque"
             exact
             render={(props) => (
-              <Estoque produtos={produtos} editProduto={editProduto} removeProduto={removeProduto} />
+              <Estoque produtos={produtos} editProduto={editProduto} removeProduto={removeProduto} loggedIn={loggedIn} />
             )}
           />
           <Route
             path="/CadastroProduto"
             exact
-            render={(props) => <CadastroProduto addProduto={addProduto} />}
+            render={(props) => <CadastroProduto addProduto={addProduto} loggedIn={loggedIn} />}
           />
 
           <Route 
             path="/CadastroUsuario" 
             exact 
-            render={(props) => <CadastroUsuario addCadastro={addCadastro} />} //
+            render={(props) => <CadastroUsuario addCadastro={addCadastro} loggedIn={loggedIn} />} //
           /> 
 
           {/* <Route 
