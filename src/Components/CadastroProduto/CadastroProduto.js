@@ -15,6 +15,7 @@ export function CadastroProduto(props) {
   function clearSubmit() {
     setNome("");
     setCodigo("");
+    setDescricao("");
     setPreco(0);
     setUnidades(0);
   }

@@ -48,12 +48,6 @@ export function Routes(props) {
             render={(props) => <CadastroUsuario addCadastro={addCadastro} loggedIn={loggedIn} />} //
           /> 
 
-          {/* <Route 
-            path="/Login" 
-            exact 
-            render={(props) => <Login cadastros={cadastros} doLogin={doLogin}/>} //
-          />  */}
-
         </Switch>
       </div>
     </BrowserRouter>

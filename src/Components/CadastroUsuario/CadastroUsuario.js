@@ -39,7 +39,7 @@ export function CadastroUsuario(props) {
     if (uname === "") {
       Swal.fire("Erro!", "Submeta um NOME!", "error");
       cond = false;
-    } else if (email === "") {
+    } else if (email === "" || email.indexOf('@' === -1)) {
       Swal.fire("Erro!", "Submeta um EMAIL!", "error");
       cond = false;
     } else if (password === "") {
