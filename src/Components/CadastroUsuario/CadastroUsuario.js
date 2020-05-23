@@ -5,8 +5,6 @@ import Swal from "sweetalert2";
 
 /* 
 TO DO:
-  - Deixar bonito (Sweetalert/inclusoes no .css -> BootStrap/MaterialUI)
-  - Melhorar validações (Regex no password )
   - Responsividade -> Bootstrap
 */
 
