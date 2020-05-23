@@ -8,14 +8,6 @@ import {
   FormGroup,
   FormCheck,
 } from "react-bootstrap";
-//import { Form } from 'react-bootstrap';
-
-/* 
-TO DO:
-  - Deixar bonito (Sweetalert/inclusoes no .css -> BootStrap/MaterialUI)
-  - Melhorar validações (Regex no password )
-  - Responsividade -> Bootstrap
-*/
 
 export function CadastroUsuario(props) {
   const [uname, setUname] = useState("");
