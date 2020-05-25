@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Produto.css";
+import Swal from "sweetalert2";
 
 export function Produto(props) {
   const [editing, setEditing] = useState(false);
@@ -55,6 +56,30 @@ export function Produto(props) {
     setEditing(true);
   }
   function handleDeleteClick() {
+    const customDialog = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    });
+    customDialog.fire({
+      title: 'Tem certeza que deseja apagar esse produto?',
+      text: "Essa ação não pode ser revertida!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim, apague!',
+      cancelButtonText: 'Não, cancele!',
+      reverseButtons: true
+    }).then((result) => {
+      if(result.value) {
+        deleteItem();
+      } else {
+        console.log('not deleted');
+      } 
+    })
+  }
+  function deleteItem() {
     const produtoARemover = {
       name: nome,
       description: descricao,
