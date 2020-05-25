@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Produto.css";
+import Swal from "sweetalert2";
 
 export function Produto(props) {
   const [editing, setEditing] = useState(false);
@@ -11,7 +12,7 @@ export function Produto(props) {
   const [tipo, setTipo] = useState(props.produto.type);
   const [unidades, setUnidades] = useState(props.produto.units);
 
-
+  const prevProduct = useRef({});
   //LÓGICA DE INICIALIZAÇÃO PARA ATUALIZAR OS STATES EM CASO DE EXCLUSÃO DE UM ELEMENTO
   useEffect(() => {
     setNome(props.produto.name);
@@ -53,8 +54,41 @@ export function Produto(props) {
 
   function handleEditClick() {
     setEditing(true);
+    prevProduct.current = {
+      name: nome,
+      description: descricao,
+      ref: codigo,
+      size: tamanho,
+      price: preco,
+      type: tipo,
+      units: unidades
+    };
   }
   function handleDeleteClick() {
+    const customDialog = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    });
+    customDialog.fire({
+      title: 'Tem certeza que deseja apagar esse produto?',
+      text: "Essa ação não pode ser revertida!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim, apague!',
+      cancelButtonText: 'Não, cancele!',
+      reverseButtons: true
+    }).then((result) => {
+      if(result.value) {
+        deleteItem();
+      } else {
+        console.log('not deleted');
+      } 
+    });
+  }
+  function deleteItem() {
     const produtoARemover = {
       name: nome,
       description: descricao,
@@ -68,6 +102,30 @@ export function Produto(props) {
     props.update();
   }
   function handleSaveClick() {
+    const customDialog = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    });
+    customDialog.fire({
+      title: 'Deseja salvar as alterações nesse produto?',
+      text: "Essa ação não pode ser revertida!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim, salve!',
+      cancelButtonText: 'Não, cancele!',
+      reverseButtons: true
+    }).then((result) => {
+      if(result.value) {
+        saveChanges();
+      } else {
+        revertChanges();
+      } 
+    });
+  }
+  function saveChanges() {
     const produtoAEditar = {
       name: nome,
       description: descricao,
@@ -79,6 +137,15 @@ export function Produto(props) {
     };
     props.editProduto(produtoAEditar);
     setEditing(false);
+  }
+  function revertChanges() {
+    setEditing(false);
+    setNome(prevProduct.current.name);
+    setDescricao(prevProduct.current.description);
+    setPreco(prevProduct.current.price);
+    setTipo(prevProduct.current.type);
+    setUnidades(prevProduct.current.units);
+    
   }
 
   if (editing) {

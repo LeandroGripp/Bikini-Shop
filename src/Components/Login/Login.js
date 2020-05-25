@@ -1,18 +1,12 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./Login.css";
-import {
-  InputGroup,
-  FormControl,
-  Button,
-  FormGroup,
-  FormCheck,
-} from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { InputGroup, FormControl, Button } from "react-bootstrap";
+import {useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
 
 export function Login(props) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const history = useHistory();
   function handleUsernameChange(event) {
     setUsername(event.target.value);
@@ -21,20 +15,21 @@ export function Login(props) {
     setPassword(event.target.value);
   }
   function handleLoginClick() {
-    
-    let userExists = props.cadastros.some(registeredUser => {
-      return (registeredUser.username === username && registeredUser.password === password);
+    let userExists = props.cadastros.some((registeredUser) => {
+      return (
+        registeredUser.username === username &&
+        registeredUser.password === password
+      );
     });
-    if(userExists) {
+    if (userExists) {
       props.doLogin(username);
-      setUsername('');
-      setPassword('');
-      history.push('/');
-    }
-    else {
+      setUsername("");
+      setPassword("");
+      history.push("/");
+    } else {
       Swal.fire("Erro!!", "Usuário ou senha incorreto", "error");
-      setUsername('');
-      setPassword('');
+      setUsername("");
+      setPassword("");
     }
   }
 
@@ -74,9 +69,13 @@ export function Login(props) {
             </FormGroup>
           </InputGroup> */}
           {/* <Link to="/CadastroProduto"> */}
-            <Button variant="outline-success" className="lbutton mx-auto" onClick={handleLoginClick}>
-              Login
-            </Button>
+          <Button
+            variant="outline-success"
+            className="lbutton mx-auto"
+            onClick={handleLoginClick}
+          >
+            Login
+          </Button>
           {/* </Link> */}
           {/* <Link to="/CadastroUsuario">
             <button className="button mbutton mx-auto">CRIAR CONTA</button>
