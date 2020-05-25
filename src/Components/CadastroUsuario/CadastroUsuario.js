@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import "./CadastroUsuario.css";
 import Swal from "sweetalert2";
-//import { Form } from 'react-bootstrap';
 
-/* 
-TO DO:
-  - Responsividade -> Bootstrap
-*/
+import { Form, InputGroup, FormControl } from "react-bootstrap";
+
+
+
 
 export function CadastroUsuario(props) {
   const [uname, setUname] = useState("");
@@ -32,32 +31,20 @@ export function CadastroUsuario(props) {
   }
 
   function handleSubmit() {
-    let cond = false;
-
-    console.log(email);
-    console.log(email.indexOf('@'))
-
     if (uname === "") {
       Swal.fire("Erro!", "Submeta um NOME!", "error");
-      cond = false;
-    } else if (email === "" || email.indexOf('@') === -1) {
+    } else if (email === "" || email.indexOf("@") === -1) {
       Swal.fire("Erro!", "Submeta um EMAIL!", "error");
-      cond = false;
     } else if (password === "") {
       Swal.fire("Erro!", "Submeta uma SENHA!", "error");
-      cond = false;
     } else if (password2 === "") {
       Swal.fire("Erro!", "Submeta a CONFIRMAÇÃO DE SENHA", "error");
-      cond = false;
+    } else if (password !== password2) {
+      Swal.fire("Erro!", "Senhas não coincidem", "error");
     } else {
-      if (password !== password2) {
-        Swal.fire("Erro!", "Senhas não coincidem", "error");
-        cond = false;
-      } else {
-        cond = true;
-        buttomSubmit();
-        Swal.fire("Sucesso!", "CADASTRO FEITO COM SUCESSO!", "success");
-      }
+      buttomSubmit();
+      clearSubmit();
+      Swal.fire("Sucesso!", "CADASTRO FEITO COM SUCESSO!", "success");
     }
   }
 
@@ -70,85 +57,100 @@ export function CadastroUsuario(props) {
     };
     props.addCadastro(cadastro);
   }
-  if(!props.loggedIn) {
+  function clearSubmit() {
+    setUname("");
+    setEmail("");
+    setPassword("");
+    setPassword2("");
+    setCargo("cargo1");
+  }
+  if (!props.loggedIn) {
     return (
-      <div className="not-logged-in-error">Você deve estar logado para acessar essa página</div>
-    )
+      <div className="not-logged-in-error">
+        Você deve estar logado para acessar essa página
+      </div>
+    );
   } else {
     return (
-    <div className="d-flex flex-column align-items-center bggggg">
-      <form className="formback d-flex flex-column">
-        <h1 className="titulo">Cadastro de Usuários</h1>
-        <div>
-          <input
-            id="nome"
-            className="input"
-            type="text"
-            placeholder="INSIRA O NOME"
-            onChange={handleUname}
-            value={uname}
-            required
-          />
-        </div>
+      <div className="d-flex flex-column align-items-center formback">
+        <Form className=" d-flex flex-column">
+          <h1 className="titulo">Cadastro de Usuários</h1>
+          <InputGroup className="mb-3">
+            <FormControl
+              id="nome"
+              type="text"
+              className="inputuser"
+              placeholder="INSIRA O NOME"
+              aria-label="INSIRA O NOME"
+              aria-describedby="basic-addon1"
+              value={uname}
+              onChange={handleUname}
+              required
+            />
+          </InputGroup>
+          <InputGroup className="mb-3">
+            <FormControl
+              id="email"
+              type="email"
+              className="inputuser"
+              placeholder="INSIRA O EMAIL"
+              aria-label="INSIRA O EMAIL"
+              aria-describedby="basic-addon1"
+              value={email}
+              onChange={handleEmail}
+              required
+            />
+          </InputGroup>
+          <InputGroup className="mb-3">
+            <FormControl
+              id="senha"
+              type="password"
+              className="inputuser"
+              placeholder="CRIE UMA SENHA"
+              aria-label="CRIE UMA SENHA"
+              aria-describedby="basic-addon1"
+              value={password}
+              onChange={handlePwd}
+              required
+            />
+          </InputGroup>
+          <InputGroup className="mb-3">
+            <FormControl
+              id="confirm senha"
+              type="password"
+              className="inputuser"
+              placeholder="CONFIRME SUA SENHA"
+              aria-label="CONFIRME SUA SENHA"
+              aria-describedby="basic-addon1"
+              value={password2}
+              onChange={handlePwd2}
+              required
+            />
+          </InputGroup>
+          <InputGroup className="mb-3">
+            <FormControl
+              as={"select"}
+              id="cargo"
+              className="inputuser"
+              placeholder="SELECIONE O CARGO"
+              aria-label="SELECIONE O CARGO"
+              aria-describedby="basic-addon1"
+              value={cargo}
+              onChange={handleCargo}
+              required
+            >
+              <option>CARGO 1</option>
+              <option>CARGO 2</option>
+              <option>CARGO 3</option>
+            </FormControl>
+          </InputGroup>
 
-        <div>
-          <input
-            id="email"
-            className="input"
-            type="email"
-            placeholder="INSIRA O EMAIL"
-            onChange={handleEmail}
-            value={email}
-            required
-          />
-        </div>
-
-        <div>
-          <input
-            id="senha"
-            className="input"
-            type="password"
-            placeholder="CRIE UMA SENHA"
-            onChange={handlePwd}
-            value={password}
-            required
-          />
-        </div>
-
-        <div>
-          <input
-            id="confirm senha"
-            className="input"
-            type="password"
-            placeholder="CONFIRME SUA SENHA"
-            onChange={handlePwd2}
-            value={password2}
-            required
-          />
-        </div>
-
-        <div>
-          <select
-            id="cargo"
-            className="input"
-            required
-            onChange={handleCargo}
-            value={cargo}
-            placeholder="SELECIONE O CARGO"
-          >
-            <option>cargo1</option>
-            <option>cargo2</option>
-            <option>cargo3</option>
-          </select>
-        </div>
-        <div>
-          <button className="btn" onClick={handleSubmit}>
-            Enviar
-          </button>
-        </div>
-      </form>
-    </div>
-  );
+          <div></div>
+        </Form>
+        <button className="btn mbtn" onClick={handleSubmit}>
+          Enviar
+        </button>
+      </div>
+    );
   }
-  
 }

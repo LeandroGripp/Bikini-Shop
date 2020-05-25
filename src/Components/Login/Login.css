@@ -11,13 +11,13 @@
 }
 
 .input {
-  font-size: large;
+  font-size: medium;
   font-family: Montserrat;
   font-weight: 600;
   /* font-variant: small-caps; */
   opacity: 0.7;
   border-radius: 3px;
-  background-color: #113618;
+  background-color: white;
   position: relative;
   top: -50px;
   height: 70px;

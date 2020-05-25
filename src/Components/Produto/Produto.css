@@ -16,3 +16,7 @@
 input {
   max-width: 100%;
 }
+.btn-success, .btn-danger {
+  color: white !important;
+  font-weight: bold;
+}
