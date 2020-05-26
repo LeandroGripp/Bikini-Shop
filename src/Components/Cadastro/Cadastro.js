@@ -9,8 +9,8 @@ export function Cadastro(props) {
     return (
       <div className="d-flex align-items-center justify-content-between">
         <div className="row cadastr-header cadastr-container py-3 px-0 my-1 ">
-          <div className="col-1 px-15">{uname}</div>
-          <div className="col-2 px-15">{email}</div>
+          <div className="col-3 px-15">{uname}</div>
+          <div className="col-6 px-15">{email}</div>
           <div className="col-3 px-15">{cargo}</div>
         </div>
       </div>
