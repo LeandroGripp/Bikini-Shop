@@ -1,0 +1,31 @@
+.back-footer{
+    background-color: #343738;
+    color: #5FE8B6;
+    padding: 25px;
+    bottom: 0;
+    width: 100%;
+    position: relative;
+    font-family: Montserrat;
+    font-size: 14px;
+}
+
+.social{
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.social i{
+    font-size: 25px;
+    color: #5FE8B6;
+}
+
+@media all and (min-width: 830px) {
+    .social {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+  }

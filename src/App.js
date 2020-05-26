@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Routes } from "./Routes";
+import {Footer} from "./Components/Footer/Footer";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(JSON.parse(localStorage.getItem("loggedIn"))||false);
@@ -74,6 +75,7 @@ function App() {
         doLogin={doLogin}
         logout={logout}
       />
+      <Footer/>
     </div>
   );
 }
