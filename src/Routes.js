@@ -7,6 +7,7 @@ import { Login } from "./Components/Login/Login";
 import { Estoque } from "./Components/Estoque/Estoque";
 import { CadastroProduto } from "./Components/CadastroProduto/CadastroProduto";
 import { CadastroUsuario } from "./Components/CadastroUsuario/CadastroUsuario";
+import { ListagemUsuarios } from "./Components/ListagemUsuarios/ListagemUsuarios"
 
 export function Routes(props) {
   const addProduto = props.addProduto;
@@ -46,6 +47,12 @@ export function Routes(props) {
             path="/CadastroUsuario" 
             exact 
             render={(props) => <CadastroUsuario addCadastro={addCadastro} loggedIn={loggedIn} />} //
+          />
+
+          <Route 
+            path="/ListagemUsuarios" 
+            exact 
+            render={(props) => <ListagemUsuarios cadastros={cadastros} loggedIn={loggedIn} />} //
           /> 
 
         </Switch>

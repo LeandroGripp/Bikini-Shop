@@ -64,7 +64,7 @@ export function Login(props) {
               onChange={handlePasswordChange}
             />
           </InputGroup>
-          {/* <InputGroup className="mb-3">
+          <InputGroup className="mb-3">
             <FormGroup controlId="formBasicCheckbox">
               <FormCheck
                 className="checkinput"
@@ -72,15 +72,15 @@ export function Login(props) {
                 label="Manter Login"
               />
             </FormGroup>
-          </InputGroup> */}
-          {/* <Link to="/CadastroProduto"> */}
+          </InputGroup> 
+          <Link to="/CadastroProduto"> 
             <Button variant="outline-success" className="lbutton mx-auto" onClick={handleLoginClick}>
               Login
             </Button>
-          {/* </Link> */}
-          {/* <Link to="/CadastroUsuario">
+          </Link> 
+          <Link to="/CadastroUsuario">
             <button className="button mbutton mx-auto">CRIAR CONTA</button>
-          </Link> */}
+          </Link> 
         </div>
       </div>
     </div>

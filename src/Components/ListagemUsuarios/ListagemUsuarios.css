@@ -1,0 +1,21 @@
+.cadastr-header {
+    border-radius: 5px;
+    background-color: #FA6C2B;
+    width: 100%;
+    font-weight: bold;
+    margin-left: 200px;
+    margin-right: 100px;
+  }
+  
+  .container {
+    max-width: 800px;
+    background-color: #343738;
+    border-radius: 10px;
+    display: inline-flex;
+    height: auto;
+    margin-top: 16px;
+    margin-bottom: auto;
+    padding-bottom: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+  }

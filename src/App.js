@@ -41,10 +41,10 @@ function App() {
   }
 
   function addCadastro(cadastro) {
-    //
-    cadastros.push(cadastro); //
-    localStorage.setItem("cadastros", JSON.stringify(cadastros)); //
-  } //
+    
+    cadastros.push(cadastro); 
+    localStorage.setItem("cadastros", JSON.stringify(cadastros)); 
+  } 
 
   function doLogin(username) {
     setLoggedIn(true);
