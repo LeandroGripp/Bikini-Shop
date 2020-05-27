@@ -12,7 +12,7 @@ function App() {
       username: "master",
       password: "master",
       email: "master@bailswimwear.com.br",
-      cargo: "Presidente",
+      cargo: "Administrador",
     },
   ]; //
 

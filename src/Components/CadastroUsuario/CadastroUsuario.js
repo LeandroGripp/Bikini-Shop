@@ -141,8 +141,8 @@ export function CadastroUsuario(props) {
             >
 
               <option>Vendedor</option>
-              <option>Gerente</option>
-              <option>Presidente</option>
+              <option>Gerente de vendas</option>
+              <option>Administrador</option>
             </FormControl>
           </InputGroup>
 
