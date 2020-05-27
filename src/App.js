@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Routes } from "./Routes";
+import {Footer} from "./Components/Footer/Footer";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(JSON.parse(localStorage.getItem("loggedIn"))||false);
@@ -11,7 +12,7 @@ function App() {
       username: "master",
       password: "master",
       email: "master@bailswimwear.com.br",
-      cargo: "cargo1",
+      cargo: "Presidente",
     },
   ]; //
 
@@ -41,10 +42,10 @@ function App() {
   }
 
   function addCadastro(cadastro) {
-    //
-    cadastros.push(cadastro); //
-    localStorage.setItem("cadastros", JSON.stringify(cadastros)); //
-  } //
+    
+    cadastros.push(cadastro); 
+    localStorage.setItem("cadastros", JSON.stringify(cadastros)); 
+  } 
 
   function doLogin(username) {
     setLoggedIn(true);
@@ -74,6 +75,7 @@ function App() {
         doLogin={doLogin}
         logout={logout}
       />
+      <Footer/>
     </div>
   );
 }

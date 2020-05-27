@@ -14,7 +14,7 @@ export function Login(props) {
   function handlePasswordChange(event) {
     setPassword(event.target.value);
   }
-  function handleLoginClick() {
+  function handleLoginClick(event) {
     let userExists = props.cadastros.some((registeredUser) => {
       return (
         registeredUser.username === username &&
@@ -26,6 +26,7 @@ export function Login(props) {
       setUsername("");
       setPassword("");
       history.push("/");
+      props.changeActiveFunction.current({ target: { href: "site/" } });
     } else {
       Swal.fire("Erro!!", "Usuário ou senha incorreto", "error");
       setUsername("");
@@ -59,7 +60,7 @@ export function Login(props) {
               onChange={handlePasswordChange}
             />
           </InputGroup>
-          {/* <InputGroup className="mb-3">
+          <InputGroup className="mb-3">
             <FormGroup controlId="formBasicCheckbox">
               <FormCheck
                 className="checkinput"
@@ -67,8 +68,8 @@ export function Login(props) {
                 label="Manter Login"
               />
             </FormGroup>
-          </InputGroup> */}
-          {/* <Link to="/CadastroProduto"> */}
+          </InputGroup>
+
           <Button
             variant="outline-success"
             className="lbutton mx-auto"
@@ -76,10 +77,7 @@ export function Login(props) {
           >
             Login
           </Button>
-          {/* </Link> */}
-          {/* <Link to="/CadastroUsuario">
-            <button className="button mbutton mx-auto">CRIAR CONTA</button>
-          </Link> */}
+
         </div>
       </div>
     </div>

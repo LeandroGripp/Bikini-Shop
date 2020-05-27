@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Navigation } from "./Components/Navigation/Navigation";
 
@@ -7,6 +7,7 @@ import { Login } from "./Components/Login/Login";
 import { Estoque } from "./Components/Estoque/Estoque";
 import { CadastroProduto } from "./Components/CadastroProduto/CadastroProduto";
 import { CadastroUsuario } from "./Components/CadastroUsuario/CadastroUsuario";
+import { ListagemUsuarios } from "./Components/ListagemUsuarios/ListagemUsuarios"
 
 export function Routes(props) {
   const addProduto = props.addProduto;
@@ -22,13 +23,15 @@ export function Routes(props) {
   const doLogin = props.doLogin;
   const logout = props.logout;
 
+  const changeActiveFunction = useRef();
+
   return (
     <BrowserRouter>
-      <Navigation loggedIn={loggedIn} loginName={loginName} logout={logout}/>
+      <Navigation loggedIn={loggedIn} loginName={loginName} logout={logout} changeActiveFunction={changeActiveFunction}/>
       <div className="routesContainer fill background">
         <Switch>
-          <Route path="/" exact render={(props) => <Home />} />
-          <Route path="/Login" exact render={(props) => <Login cadastros={cadastros} doLogin={doLogin} />} />
+          <Route path="/" exact render={(props) => <Home changeActiveFunction={changeActiveFunction}/>} />
+          <Route path="/Login" exact render={(props) => <Login cadastros={cadastros} doLogin={doLogin} changeActiveFunction={changeActiveFunction} />} />
           <Route
             path="/Estoque"
             exact
@@ -46,6 +49,12 @@ export function Routes(props) {
             path="/CadastroUsuario" 
             exact 
             render={(props) => <CadastroUsuario addCadastro={addCadastro} loggedIn={loggedIn} />} //
+          />
+
+          <Route 
+            path="/ListagemUsuarios" 
+            exact 
+            render={(props) => <ListagemUsuarios cadastros={cadastros} loggedIn={loggedIn} />} //
           /> 
 
         </Switch>

@@ -12,7 +12,7 @@ export function CadastroUsuario(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
-  const [cargo, setCargo] = useState("cargo1");
+  const [cargo, setCargo] = useState("Vendedor");
 
   function handleUname(event) {
     setUname(event.target.value);
@@ -139,13 +139,14 @@ export function CadastroUsuario(props) {
               onChange={handleCargo}
               required
             >
-              <option>CARGO 1</option>
-              <option>CARGO 2</option>
-              <option>CARGO 3</option>
+
+              <option>Vendedor</option>
+              <option>Gerente</option>
+              <option>Presidente</option>
             </FormControl>
           </InputGroup>
 
-          <div></div>
+          
         </Form>
         <button className="btn mbtn" onClick={handleSubmit}>
           Enviar

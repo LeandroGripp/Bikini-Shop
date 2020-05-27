@@ -12,15 +12,17 @@ export function Navigation(props) {
     Estoque: extension === "Estoque",
     CadastroUsuario: extension === "CadastroUsuario",
     CadastroProduto: extension === "CadastroProduto",
+    ListagemUsuarios: extension === "ListagemUsuarios",
   });
   const [navExpanded, setNavExpanded] = useState(false);
-
+  props.changeActiveFunction.current = chooseActive;
   function chooseActive(event) {
     let buffer = {
       Login: false,
       Estoque: false,
       CadastroUsuario: false,
       CadastroProduto: false,
+      ListagemUsuarios: false,
     };
     const substIndex = event.target.href.lastIndexOf("/") + 1;
     const newActive = event.target.href.substring(substIndex);
@@ -51,7 +53,7 @@ export function Navigation(props) {
     <Navbar
       className="navigationBar"
       collapseOnSelect
-      expand="lg"
+      expand="xl"
       expanded={navExpanded}
     >
       <Link className="NavTitle" to="/" onClick={chooseActive}>
@@ -78,6 +80,13 @@ export function Navigation(props) {
             className={"navlink p-2 " + (active.CadastroUsuario && "active")}
           >
             Cadastro Usuário
+          </Link>
+          <Link
+            to="/ListagemUsuarios"
+            onClick={chooseActive}
+            className={"navlink p-2 " + (active.ListagemUsuarios && "active")}
+          >
+            Listagem de Usuários
           </Link>
           <Link
             to="/CadastroProduto"
