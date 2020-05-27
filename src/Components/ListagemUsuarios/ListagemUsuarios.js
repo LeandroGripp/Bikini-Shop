@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "./ListagemUsuarios.css";
 import { Cadastro } from "../Cadastro/Cadastro";
 

@@ -60,15 +60,6 @@ export function Login(props) {
               onChange={handlePasswordChange}
             />
           </InputGroup>
-          <InputGroup className="mb-3">
-            <FormGroup controlId="formBasicCheckbox">
-              <FormCheck
-                className="checkinput"
-                type="checkbox"
-                label="Manter Login"
-              />
-            </FormGroup>
-          </InputGroup>
 
           <Button
             variant="outline-success"
