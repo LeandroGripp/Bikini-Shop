@@ -62,7 +62,7 @@ export function CadastroUsuario(props) {
     setEmail("");
     setPassword("");
     setPassword2("");
-    setCargo("cargo1");
+    setCargo("Vendedor");
   }
   if (!props.loggedIn) {
     return (
