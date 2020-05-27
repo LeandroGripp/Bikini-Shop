@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
-import {
-  InputGroup,
-  FormControl,
-  Button,
-  FormGroup,
-  FormCheck,
-} from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { InputGroup, FormControl, Button } from "react-bootstrap";
+import {useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
 
 export function Login(props) {
@@ -84,9 +78,6 @@ export function Login(props) {
             Login
           </Button>
 
-          <Link to="/CadastroUsuario">
-            <button className="button mbutton mx-auto">CRIAR CONTA</button>
-          </Link>
         </div>
       </div>
     </div>

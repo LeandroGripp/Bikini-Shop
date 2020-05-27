@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import "./CadastroUsuario.css";
 import Swal from "sweetalert2";
-import {
-  InputGroup,
-  FormControl,
-  Button,
-  FormGroup,
-  FormCheck,
-} from "react-bootstrap";
+
+import { Form, InputGroup, FormControl } from "react-bootstrap";
+
+
+
 
 export function CadastroUsuario(props) {
   const [uname, setUname] = useState("");
@@ -33,32 +31,20 @@ export function CadastroUsuario(props) {
   }
 
   function handleSubmit() {
-    let cond = false;
-
-    console.log(email);
-    console.log(email.indexOf("@"));
-
     if (uname === "") {
       Swal.fire("Erro!", "Submeta um NOME!", "error");
-      cond = false;
     } else if (email === "" || email.indexOf("@") === -1) {
       Swal.fire("Erro!", "Submeta um EMAIL!", "error");
-      cond = false;
     } else if (password === "") {
       Swal.fire("Erro!", "Submeta uma SENHA!", "error");
-      cond = false;
     } else if (password2 === "") {
       Swal.fire("Erro!", "Submeta a CONFIRMAÇÃO DE SENHA", "error");
-      cond = false;
+    } else if (password !== password2) {
+      Swal.fire("Erro!", "Senhas não coincidem", "error");
     } else {
-      if (password !== password2) {
-        Swal.fire("Erro!", "Senhas não coincidem", "error");
-        cond = false;
-      } else {
-        cond = true;
-        buttomSubmit();
-        Swal.fire("Sucesso!", "CADASTRO FEITO COM SUCESSO!", "success");
-      }
+      buttomSubmit();
+      clearSubmit();
+      Swal.fire("Sucesso!", "CADASTRO FEITO COM SUCESSO!", "success");
     }
   }
 
@@ -71,6 +57,13 @@ export function CadastroUsuario(props) {
     };
     props.addCadastro(cadastro);
   }
+  function clearSubmit() {
+    setUname("");
+    setEmail("");
+    setPassword("");
+    setPassword2("");
+    setCargo("cargo1");
+  }
   if (!props.loggedIn) {
     return (
       <div className="not-logged-in-error">
@@ -79,8 +72,8 @@ export function CadastroUsuario(props) {
     );
   } else {
     return (
-      <div className="d-flex flex-column align-items-center">
-        <form className="formback d-flex flex-column">
+      <div className="d-flex flex-column align-items-center formback">
+        <Form className=" d-flex flex-column">
           <h1 className="titulo">Cadastro de Usuários</h1>
           <InputGroup className="mb-3">
             <FormControl
@@ -135,7 +128,8 @@ export function CadastroUsuario(props) {
             />
           </InputGroup>
           <InputGroup className="mb-3">
-            <FormControl as={"select"}
+            <FormControl
+              as={"select"}
               id="cargo"
               className="inputuser"
               placeholder="SELECIONE O CARGO"
@@ -145,18 +139,18 @@ export function CadastroUsuario(props) {
               onChange={handleCargo}
               required
             >
+
               <option>Vendedor</option>
               <option>Gerente</option>
               <option>Presidente</option>
-              </FormControl>
-          </InputGroup> 
-      
-          <div>
-            <button className="btn mbtn" onClick={handleSubmit}>
-              Enviar
-            </button>
-          </div>
-        </form>
+            </FormControl>
+          </InputGroup>
+
+          
+        </Form>
+        <button className="btn mbtn" onClick={handleSubmit}>
+          Enviar
+        </button>
       </div>
     );
   }
