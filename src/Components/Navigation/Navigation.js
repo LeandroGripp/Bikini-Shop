@@ -15,7 +15,7 @@ export function Navigation(props) {
     ListagemUsuarios: extension === "ListagemUsuarios",
   });
   const [navExpanded, setNavExpanded] = useState(false);
-
+  props.changeActiveFunction.current = chooseActive;
   function chooseActive(event) {
     let buffer = {
       Login: false,

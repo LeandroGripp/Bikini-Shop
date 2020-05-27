@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Navigation } from "./Components/Navigation/Navigation";
 
@@ -23,13 +23,15 @@ export function Routes(props) {
   const doLogin = props.doLogin;
   const logout = props.logout;
 
+  const changeActiveFunction = useRef();
+
   return (
     <BrowserRouter>
-      <Navigation loggedIn={loggedIn} loginName={loginName} logout={logout}/>
+      <Navigation loggedIn={loggedIn} loginName={loginName} logout={logout} changeActiveFunction={changeActiveFunction}/>
       <div className="routesContainer fill background">
         <Switch>
-          <Route path="/" exact render={(props) => <Home />} />
-          <Route path="/Login" exact render={(props) => <Login cadastros={cadastros} doLogin={doLogin} />} />
+          <Route path="/" exact render={(props) => <Home changeActiveFunction={changeActiveFunction}/>} />
+          <Route path="/Login" exact render={(props) => <Login cadastros={cadastros} doLogin={doLogin} changeActiveFunction={changeActiveFunction} />} />
           <Route
             path="/Estoque"
             exact

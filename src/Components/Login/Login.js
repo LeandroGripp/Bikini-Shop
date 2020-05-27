@@ -20,7 +20,7 @@ export function Login(props) {
   function handlePasswordChange(event) {
     setPassword(event.target.value);
   }
-  function handleLoginClick() {
+  function handleLoginClick(event) {
     
     let userExists = props.cadastros.some(registeredUser => {
       return (registeredUser.username === username && registeredUser.password === password);
@@ -36,6 +36,7 @@ export function Login(props) {
       setUsername('');
       setPassword('');
     }
+    props.changeActiveFunction.current({target:{href: 'site/'}})
   }
 
   return (
@@ -73,13 +74,13 @@ export function Login(props) {
               />
             </FormGroup>
           </InputGroup> 
-          <Link to="/CadastroProduto"> 
+          <Link to="/"> 
             <Button variant="outline-success" className="lbutton mx-auto" onClick={handleLoginClick}>
               Login
             </Button>
           </Link> 
           <Link to="/CadastroUsuario">
-            <button className="button mbutton mx-auto">CRIAR CONTA</button>
+            <button  className="button mbutton mx-auto">CRIAR CONTA</button>
           </Link> 
         </div>
       </div>
