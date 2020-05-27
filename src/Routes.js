@@ -30,7 +30,7 @@ export function Routes(props) {
       <Navigation loggedIn={loggedIn} loginName={loginName} logout={logout} changeActiveFunction={changeActiveFunction}/>
       <div className="routesContainer fill background">
         <Switch>
-          <Route path="/" exact render={(props) => <Home changeActiveFunction={changeActiveFunction}/>} />
+          <Route path="/" exact render={(props) => <Home changeActiveFunction={changeActiveFunction} loggedIn={loggedIn}/>} />
           <Route path="/Login" exact render={(props) => <Login cadastros={cadastros} doLogin={doLogin} changeActiveFunction={changeActiveFunction} />} />
           <Route
             path="/Estoque"

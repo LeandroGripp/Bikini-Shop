@@ -12,9 +12,10 @@ export function Home(props) {
         <div className="imgcontainer d-flex flex-column">
           <img className="logo" alt="logo" src="/homelogo.jpg" />
         </div>
-          <Link to="/Login" onClick={goToLogin}>
+
+          {!props.loggedIn && <Link to="/Login" onClick={goToLogin}>
             <button className="logar mx-auto" >Entrar</button>
-          </Link>
+          </Link>}
       </div>
     </div>
   );
