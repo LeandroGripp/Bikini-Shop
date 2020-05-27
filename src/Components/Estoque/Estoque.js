@@ -20,12 +20,12 @@ export function Estoque(props) {
         <div className="container flex-column ">
           <div className="row product-header my-3">
             <div className="col-1 px-0">Ref</div>
-            <div className="col-2 px-0">Name</div>
-            <div className="col-3 px-0">Description</div>
-            <div className="col-2 px-0">Type</div>
-            <div className="col-1 px-0">Size</div>
-            <div className="col-2 px-0">Price</div>
-            <div className="col-1 px-0">Units</div>
+            <div className="col-2 px-0">Nome</div>
+            <div className="col-3 px-0">Descrição</div>
+            <div className="col-2 px-0">Tipo</div>
+            <div className="col-1 px-0">Tamanho</div>
+            <div className="col-2 px-0">Preço</div>
+            <div className="col-1 px-0">Unid</div>
           </div>
           {props.produtos.length > 0
             ? props.produtos.map((produto, index) => (

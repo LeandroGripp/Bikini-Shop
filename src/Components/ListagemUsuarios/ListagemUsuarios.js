@@ -14,7 +14,7 @@ export function ListagemUsuarios(props) {
         return (
             <div className="container flex-column">
               <div className="row cadastr-header my-3">
-                <div className="col-3 px-15">Username</div>
+                <div className="col-3 px-15">Usuário</div>
                 <div className="col-6 px-15">Email</div>
                 <div className="col-3 px-15">Cargo</div>
               </div>

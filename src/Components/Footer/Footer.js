@@ -8,8 +8,8 @@ export function Footer(props) {
         <div className="row">
           <div className="col-lg">
             <p className="m-0">
-              &copy;{new Date().getFullYear()} Consultoria e Projetos Elétricos
-              Júnior. Todos os direitos reservados.
+              &copy;{new Date().getFullYear()} <a href="http://www.cpejr.com.br" target="_blank" rel="noopener noreferrer"className="cpe">Consultoria e Projetos Elétricos
+              Júnior.</a> Todos os direitos reservados.
             </p>
           </div>
           <div className="social">

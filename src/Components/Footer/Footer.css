@@ -22,6 +22,11 @@
     color: #5FE8B6;
 }
 
+.cpe,.cpe:hover{
+    color:#5FE8B6;
+    
+}
+
 @media all and (min-width: 830px) {
     .social {
       position: absolute;
