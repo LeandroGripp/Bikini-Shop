@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import {
   InputGroup,
@@ -11,8 +11,8 @@ import { Link, useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
 
 export function Login(props) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const history = useHistory();
   function handleUsernameChange(event) {
     setUsername(event.target.value);
@@ -21,22 +21,23 @@ export function Login(props) {
     setPassword(event.target.value);
   }
   function handleLoginClick(event) {
-    
-    let userExists = props.cadastros.some(registeredUser => {
-      return (registeredUser.username === username && registeredUser.password === password);
+    let userExists = props.cadastros.some((registeredUser) => {
+      return (
+        registeredUser.username === username &&
+        registeredUser.password === password
+      );
     });
-    if(userExists) {
+    if (userExists) {
       props.doLogin(username);
-      setUsername('');
-      setPassword('');
-      history.push('/');
-    }
-    else {
+      setUsername("");
+      setPassword("");
+      history.push("/");
+      props.changeActiveFunction.current({ target: { href: "site/" } });
+    } else {
       Swal.fire("Erro!!", "Usuário ou senha incorreto", "error");
-      setUsername('');
-      setPassword('');
+      setUsername("");
+      setPassword("");
     }
-    props.changeActiveFunction.current({target:{href: 'site/'}})
   }
 
   return (
@@ -73,15 +74,19 @@ export function Login(props) {
                 label="Manter Login"
               />
             </FormGroup>
-          </InputGroup> 
-          <Link to="/"> 
-            <Button variant="outline-success" className="lbutton mx-auto" onClick={handleLoginClick}>
-              Login
-            </Button>
-          </Link> 
+          </InputGroup>
+
+          <Button
+            variant="outline-success"
+            className="lbutton mx-auto"
+            onClick={handleLoginClick}
+          >
+            Login
+          </Button>
+
           <Link to="/CadastroUsuario">
-            <button  className="button mbutton mx-auto">CRIAR CONTA</button>
-          </Link> 
+            <button className="button mbutton mx-auto">CRIAR CONTA</button>
+          </Link>
         </div>
       </div>
     </div>
