@@ -30,7 +30,7 @@
 
 .caixa {
   width: 570px;
-  height: 650px;
+  min-height: 650px;
   background-color:#5FCFE8;
   margin: auto;
   justify-content: center;

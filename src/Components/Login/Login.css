@@ -1,6 +1,6 @@
 .login {
   width: 570px;
-  height: 650px;
+  min-height: 650px;
   background-color: #5fe8b6;
   margin: auto;
   justify-content: center;
